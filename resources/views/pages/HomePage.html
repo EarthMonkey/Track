@@ -25,7 +25,7 @@
         <div class="nav">日迹</div>
         <div class="nav">赛迹</div>
         <div class="nav">足迹</div>
-        <div class="nav">寻迹</div>
+        <div class="nav">人迹</div>
     </div>
 
     <div class="personal_div">
@@ -42,15 +42,48 @@
     <img src="/Track/public/Image/footprint-right.jpg" class="foot_left" style="float: right;">
     <div style="position: relative;top: 55px;">
         行迹<br>
-        让您到每一步都有迹可寻
+        让您的每一步都有迹可寻
     </div>
 </div>
 
 <div class="pic_bg">
 
-    <img src="/Track/public/Image/map.png">
+    <img src="/Track/public/Image/map.png" style="width: 90%;">
+
+    <div class="point" onmouseenter="showIntro(0)" onmouseleave="hideDiv('bubble')">
+        <!--<i class="fa fa-map-marker fa-2x"></i>-->
+        <span class="nav_lbl">日迹</span>
+    </div>
+
+    <div class="point com" onmouseenter="showIntro(1)" onmouseleave="hideDiv('bubble')">
+        <!--<i class="fa fa-map-marker fa-2x"></i>-->
+        <span class="nav_lbl">赛迹</span>
+    </div>
+
+    <div class="point foot" onmouseenter="showIntro(2)" onmouseleave="hideDiv('bubble')">
+        <!--<i class="fa fa-map-marker fa-2x"></i>-->
+        <span class="nav_lbl">足迹</span>
+    </div>
+
+    <div class="point social" onmouseenter="showIntro(3)" onmouseleave="hideDiv('bubble')">
+        <!--<i class="fa fa-map-marker fa-2x"></i>-->
+        <span class="nav_lbl">人迹</span>
+    </div>
+
+    <div id="bubble" class="bubble_box" style="display: none;">
+        <div class="arrow">
+            <em></em>
+        </div>
+        <span></span>
+    </div>
 
 </div>
 
+
+<div class="bottom_nav">
+    @Copyright  Sure
+</div>
+
+<script src="/Track/public/js/login.js"></script>
 </body>
 </html>

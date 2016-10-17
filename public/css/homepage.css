@@ -3,7 +3,7 @@
     height: 270px;
     background-color: #eef0fc;
     font-size: 40px;
-    font-family: "Libian SC", serif;
+    font-family: "Libian SC", "PingFang SC", serif;
     color: #77ba6b;
     text-align: center;
     text-shadow: -3px 3px 4px #DAEED3;
@@ -16,13 +16,92 @@
 }
 
 .pic_bg {
-    width: 1190px;
-    height: 355px;
+    width: 80%;
     border-radius: 6px;
     background-color: #8dad59;
     box-shadow: 6px 6px 4px #64876d;
     margin: 40px auto;
-    padding-top: 60px;
-    padding-left: 30px;
+    padding-top: 50px;
+    padding-bottom: 52px;
+    padding-left: 5%;
+    position: relative;
+    color: #2D7714;
 }
+
+.nav_lbl {
+    font-size: 20px;
+    font-family: "PingFang SC", serif;
+    position: relative;
+    top: 25px;
+    left: -15px;
+}
+
+.point {
+    position: absolute;
+    left: 22%;
+    top: 52.1%;
+    cursor: pointer;
+}
+
+.com {
+    position: absolute;
+    left: 45.1%;
+    top: 30.2%;
+    cursor: pointer;
+}
+
+.foot {
+    position: absolute;
+    left: 48.4%;
+    top: 39%;
+    cursor: pointer;
+}
+
+.social {
+    position: absolute;
+    left: 85.4%;
+    top: 52.1%;
+    cursor: pointer;
+}
+
+.point:hover {
+    color: #1c5e29;
+}
+
+/* 气泡框 */
+.bubble_box {
+    width: 150px;
+    border-radius: 6px;
+    position: absolute;
+    background-color: #e8f7e1;
+    box-shadow: 0 1px 3px #8fe4ad;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    cursor: default;
+    color: #2D7714;
+}
+
+.arrow {
+    position: absolute;
+    width: 15px;
+    height: 40px;
+    bottom: -40px;
+    left: 100px;
+}
+
+.arrow * {
+    display: block;
+    border-width: 10px;
+    position: absolute;
+    border-style: solid dashed dashed dashed;
+    font-size: 0;
+    line-height: 0;
+}
+
+.arrow em {
+    border-color: #e8f7e1 transparent transparent;
+}
+
 
