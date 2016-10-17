@@ -1,0 +1,28 @@
+.intro_div {
+    width: 100%;
+    height: 270px;
+    background-color: #eef0fc;
+    font-size: 40px;
+    font-family: "Libian SC", serif;
+    color: #77ba6b;
+    text-align: center;
+    text-shadow: -3px 3px 4px #DAEED3;
+}
+
+.foot_left {
+    width: 250px;
+    float: left;
+    vertical-align: top;
+}
+
+.pic_bg {
+    width: 1190px;
+    height: 355px;
+    border-radius: 6px;
+    background-color: #8dad59;
+    box-shadow: 6px 6px 4px #64876d;
+    margin: 40px auto;
+    padding-top: 60px;
+    padding-left: 30px;
+}
+
