@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Track</title>
 
+    <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/Track/public/css/reset.css" rel="stylesheet">
     <link href="/Track/public/css/common.css" rel="stylesheet">
     <link href="/Track/public/css/homepage.css" rel="stylesheet">
-    <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -22,7 +22,7 @@
 
     <div class="navs">
         <div class="nav active">首页</div>
-        <div class="nav">日迹</div>
+        <div class="nav" onclick="window.location.href='/Track/resources/views/pages/Daily.html'">日迹</div>
         <div class="nav">赛迹</div>
         <div class="nav">足迹</div>
         <div class="nav">人迹</div>
@@ -32,15 +32,33 @@
 
         <div class="photo"></div>
         <div class="userId">sure</div>
-        <div class="fa fa-sort-desc combox"></div>
+        <div class="fa fa-sort-desc combox" onclick="showPersonal()"></div>
     </div>
 
+    <!-- 响应式菜单 -->
+    <div class="nav_btn">
+        <i class="fa fa-bars fa-2x"></i>
+    </div>
+
+</div>
+
+<!-- 下拉菜单 -->
+<div id="personalbar" class="personal_bar" style="display: none">
+    <div class="menu_person">
+        <img src="/Track/public/Image/person.svg" class="person_icon">
+        <span class="person_lbl">个人中心</span>
+    </div>
+
+    <div class="menu_person" onclick="Signout()">
+        <img src="/Track/public/Image/signout.svg" class="person_icon" style="top: 4px; left: 5px;">
+        <span class="person_lbl">注&nbsp;销</span>
+    </div>
 </div>
 
 <div class="intro_div">
     <img src="/Track/public/Image/footprint-left.jpg" class="foot_left">
     <img src="/Track/public/Image/footprint-right.jpg" class="foot_left" style="float: right;">
-    <div style="position: relative;top: 55px;">
+    <div style="position: relative;top: 55px; font-family: 'Libian SC', 'PingFang SC', serif;">
         行迹<br>
         让您的每一步都有迹可寻
     </div>
@@ -85,5 +103,7 @@
 </div>
 
 <script src="/Track/public/js/login.js"></script>
+<script src="/Track/public/js/common.js"></script>
+<script src="/Track/public/js/jquery.js"></script>
 </body>
 </html>
