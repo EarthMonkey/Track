@@ -1,0 +1,56 @@
+.sum_pic_div {
+    width: 560px;
+    margin: 20px auto;
+    position: relative;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.mid_img {
+    margin: -40px 100px;
+}
+
+.hide_img_2 {
+    position: absolute;
+    left: 270px;
+    top: 87px;
+}
+
+.hide_img_3 {
+    position: absolute;
+    left: 490px;
+    top: 47px;
+}
+
+.gradual_bg {
+    width: 90%;
+    height: 130px;
+    background: -webkit-linear-gradient(top, #cff4ce, #fff);
+    box-shadow: 0 -4px 4px #CCEBCC;
+    margin: 0px auto;
+    margin-top: -90px;
+}
+
+.chart_weight {
+    width: 90%;
+    height: 300px;
+    background: -webkit-linear-gradient(left bottom, #dbf5cb, #f6fbf3);
+    margin: 20px auto;
+    border-radius: 4px;
+    box-shadow: 0 0 4px #d3d8d0;
+}
+
+@media screen and (max-width: 610px) {
+    .mid_img {
+        margin: -40px 52px;
+    }
+
+    .hide_img_2 {
+        left: 220px;
+    }
+
+    .hide_img_3 {
+        left: 392px;
+    }
+}

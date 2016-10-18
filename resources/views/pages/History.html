@@ -6,6 +6,7 @@
 
     <link href="/Track/public/css/common.css" rel="stylesheet">
     <link href="/Track/public/css/reset.css" rel="stylesheet">
+    <link href="/Track/public/css/history.css" rel="stylesheet">
     <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
@@ -47,50 +48,49 @@
     </div>
 
     <div class="menu_person" onclick="Signout()">
-        <img src="/Track/public/Image/signout.svg" class="person_icon" style="top: 4px; left: 5px;">
+        <img src="/Track/public/Image/signout.svg" class="person_icon">
         <span class="person_lbl">注&nbsp;销</span>
     </div>
 </div>
 
 <div class="top_bg"></div>
 
-<!-- 左侧导航栏 -->
-<div class="left_nav">
+<div class="right_div" style="margin: 20px auto; width: 90%;">
 
-    <div class="sub_nav">
-        我的运动
-        <i class="fa fa-angle-right"></i>
+    <div class="lead_text">这些都是您留下来的痕迹</div>
+    <div class="sum_pic_div">
+        <img src="/Track/public/Image/his-km.png" style="z-index: 100;">
+        <div style="position: absolute; left: 50px; top: 46px;">0</div>
+
+        <img src="/Track/public/Image/his-day.png" class="mid_img" style="z-index: 100;">
+        <div style="" class="hide_img_2">0</div>
+
+        <img src="/Track/public/Image/his-cal.png" style="z-index: 100;">
+        <div style="" class="hide_img_3">0</div>
     </div>
 
-    <div class="hide_bar sport"></div>
+    <div class="gradual_bg"></div>
 
-    <div class="sub_nav">
-        睡眠分析
-        <i class="fa fa-angle-right"></i>
-    </div>
+    <div class="lead_text" style="margin-top: 40px;">这是您每个或激情或安静的一天</div>
+    <div id="eachday" class="chart_weight"></div>
 
-    <div class="hide_bar sleep"></div>
+    <div class="lead_text" style="margin-top: 40px;">这是您这些年来的体重变化</div>
+    <div class="chart_weight"></div>
 
-    <div class="sub_nav">
-        身体管理
-        <i class="fa fa-angle-right"></i>
-    </div>
+    <div class="lead_text" style="margin-top: 40px;">还有您每个有我陪伴的夜晚</div>
+    <div class="chart_weight"></div>
 
 </div>
-
-
-<div class="right_div">
-
-
-</div>
-
 
 
 <div class="bottom_nav">
-    @Copyright  Sure
+    @Copyright Sure
 </div>
 
 <script src="/Track/public/js/common.js"></script>
 <script src="/Track/public/js/jquery.js"></script>
+<script src="/Track/public/js/history.js"></script>
+<script src="/Track/public/js/echarts.min.js"></script>
+<script src="/Track/public/js/barchart.js"></script>
 </body>
 </html>

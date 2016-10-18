@@ -71,7 +71,7 @@
 }
 
 .history_pic {
-    background-image: url("../../public/Image/daily-cut.png");
+    background-image: url("../../public/Image/history-cut.png");
 }
 
 .social_pic {
@@ -85,7 +85,7 @@
     padding-bottom: 10px;
     font-size: 16px;
     cursor: default;
-    color: #286e10;
+    color: #165501;
 }
 
 @media only screen and (max-width: 1270px) {
