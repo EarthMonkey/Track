@@ -4,7 +4,7 @@
 
 .nav_bar {
     width: 100%;
-    background-color: #79AD23;
+    background-color: #79ad23;
 }
 
 .logo_white {
@@ -155,7 +155,7 @@
     opacity: 0.7;
     position: fixed;
     top: 220px;
-    left: 65px;
+    left: 55px;
     border: none;
     box-shadow: 0 0 10px #9EA891;
 }
@@ -169,6 +169,7 @@
     line-height: 50px;
     color: #75AD82;
     cursor: pointer;
+    z-index: 10;
 }
 
 .hide_bar {
@@ -179,17 +180,22 @@
     color: #55D070;
 }
 
+.sub-active {
+    color: #55D070;
+}
+
 .right_div {
     width: 70%;
-    height: 800px; /* */
     background-color: #f3faef;
     opacity: 0.7;
     margin-left: 23%;
     margin-top: 60px;
     border: none;
     border-radius: 2px;
-    box-shadow: 0 0 10px #9EA891;
-    padding-left: 20px;
+    box-shadow: 0 0 10px #9ea891;
+    z-index: 10;
+    /** Attention **/
+    padding: 50px 0px;
 }
 
 
@@ -250,5 +256,6 @@
         border-radius: 8px;
         margin-top: 5px;
         margin-left: 2px;
+        cursor: pointer;
     }
 }

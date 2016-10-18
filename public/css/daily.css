@@ -1,21 +1,87 @@
-
 .circle {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: 20px solid #E9AF42;
+    border: 20px solid #d36d44;
     cursor: pointer;
     transition: 0.2s;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    color: #d36d44;
+    display: inline-block;
+    margin-right: 70px;
 }
 
 .circle:hover {
-    border: 22px solid #F4A40C;
+    color: #ef662e;
+    border: 22px solid #ef662e;
 }
+
+.circle_orange {
+    color: #e9af42;
+    border: 20px solid #e9af42;
+}
+
+.circle_orange:hover {
+    border: 22px solid #f4a40c;
+}
+
+.circle_blue {
+    color: #72c4db;
+    border: 20px solid #72c4db;
+}
+
+.circle_blue:hover {
+    color: #26b6df;
+    border: 22px solid #26b6df;
+}
+
+.lead_text {
+    font-size: 26px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    margin-left: 80px;
+}
+
+.rectangle {
+    width: 190px;
+    height: 200px;
+    background-color: #d8d8d8;
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 0;
+    margin-left: -5px;
+    border-bottom: 1px solid #fff;
+}
+
+.rectangle .pic_img {
+    position: relative;
+    top: 15px;
+    left: 60px;
+}
+
+.pic_text {
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 35px;
+}
+
+.chart_div {
+    width: 85%;
+    height: 300px;
+    margin-left: 80px;
+    background-color: #d5ebcc;
+}
+
+
 
 @media only screen and (max-width: 1100px) {
     .sport {
         background-image: url("../../public/Image/run-white.png");
-        cursor: pointer;
     }
 
     .sport:hover {
@@ -25,12 +91,32 @@
     .sleep {
         border-radius: 8px;
         background-image: url("../../public/Image/sleep-white.png");
-        cursor: pointer;
     }
 
     .sleep:hover {
         background-image: url("../../public/Image/sleep-green.png");
     }
 
+    .hide_body {
+        width: 49px;
+        height: 39px;
+        border-radius: 6px;
+        color: #fff;
+        background-color: #79ad23;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .hide_body:hover {
+        color: #79ad23;
+        background-color: #fff;
+    }
+
+}
+
+@media only screen and (max-width: 850px) {
+    .chart_div, .hide_text {
+        display: none;
+    }
 }
 

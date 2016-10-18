@@ -19,6 +19,11 @@ function Register() {
 }
 
 
+function showDiv(elem_id) {
+    $("#" + elem_id).fadeIn("slow");
+}
+
+
 /** homepage **/
 function showIntro(index) {
     var point = document.getElementsByClassName("point")[index];

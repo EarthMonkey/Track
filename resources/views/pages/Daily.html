@@ -58,23 +58,27 @@
 <!-- 左侧导航栏 -->
 <div class="left_nav">
 
-    <div class="sub_nav">
+    <div class="sub_nav sub-active" onclick="changeTab(0)">
         我的运动
         <i class="fa fa-angle-right"></i>
     </div>
 
-    <div class="hide_bar sport"></div>
-
-    <div class="sub_nav">
+    <div class="sub_nav" onclick="changeTab(1)">
         睡眠分析
         <i class="fa fa-angle-right"></i>
     </div>
 
-    <div class="hide_bar sleep"></div>
-
-    <div class="sub_nav">
+    <div class="sub_nav" onclick="changeTab(2)">
         身体管理
         <i class="fa fa-angle-right"></i>
+    </div>
+
+    <div class="hide_bar sport" onclick="changeTab(0)"></div>
+
+    <div class="hide_bar sleep"  onclick="changeTab(1)"></div>
+
+    <div class="hide_bar hide_body"  onclick="changeTab(2)">
+        <i class="fa fa-plus-square fa-2x "></i>
     </div>
 
 </div>
@@ -82,26 +86,96 @@
 
 <div id="mysport" class="right_div">
 
-    <div class="circles_div">
-
+    <div class="lead_text">您今天的运动状况</div>
+    <div style="margin-left: 80px;">
         <div class="circle">
+            <div style="margin-top: 45px;">
+                已燃烧大卡<br>
+                <span style="font-size: 26px;">0</span>
+                <span style="font-size: 16px">大卡</span>
+            </div>
+        </div>
 
+        <div class="circle circle_blue">
+            <div style="margin-top: 45px;">
+                累计步数<br>
+                <span style="font-size: 26px;">0</span>
+                <span style="font-size: 16px">步</span>
+            </div>
+        </div>
 
+        <div class="circle circle_orange">
+            <div style="margin-top: 45px;">
+                运动距离<br>
+                <span style="font-size: 26px;">0</span>
+                <span style="font-size: 16px">公里</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="lead_text" style="margin-top: 50px;">这些运动量可以</div>
+    <div style="margin-left: 80px;">
+
+        <div class="rectangle" style="background-color: #d5ebcc;">
+
+            <img src="/Track/public/Image/pic_run.png" style="left: 45px;" class="pic_img">
+            <div class="pic_text">
+                绕环形跑道<br>
+                <span style="font-size: 26px">0</span>
+                <span style="font-size: 16px;">圈</span>
+            </div>
 
         </div>
 
+        <div class="rectangle">
 
+            <img src="/Track/public/Image/pic_meat.png" class="pic_img">
+            <div class="pic_text">
+                消耗肥肉<br>
+                <span style="font-size: 26px">0</span>
+                <span style="font-size: 16px;">公斤</span>
+            </div>
+
+        </div>
+
+        <div class="rectangle" style="background-color: #d5ebcc;">
+
+            <img src="/Track/public/Image/pic_light.png" class="pic_img">
+            <div class="pic_text">
+                省下93#汽油<br>
+                <span style="font-size: 26px">0</span>
+                <span style="font-size: 16px;">升</span>
+            </div>
+
+        </div>
+
+        <div class="rectangle">
+
+            <img src="/Track/public/Image/pic_fuel.png" class="pic_img">
+            <div class="pic_text">
+                60W灯泡亮<br>
+                <span style="font-size: 26px">0</span>
+                <span style="font-size: 16px;">小时</span>
+            </div>
+
+        </div>
     </div>
+
+    <div class="lead_text hide_text" style="margin-top: 50px;">您的运动曲线图</div>
+    <div class="chart_div"></div>
 
 </div>
 
+<div id="mysleep" class="right_div" style="display: none;"></div>
 
+<div id="mybody" class="right_div" style="display: none;"></div>
 
 <div class="bottom_nav">
-    @Copyright  Sure
+    @Copyright Sure
 </div>
 
 <script src="/Track/public/js/common.js"></script>
 <script src="/Track/public/js/jquery.js"></script>
+<script src="/Track/public/js/daily.js"></script>
 </body>
 </html>
