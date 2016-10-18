@@ -29,7 +29,6 @@
 .each_pic {
     width: 330px;
     height: 180px;
-    background-color: #F3FAEF;
     box-shadow: 0 0 7px #d8d8d8;
     cursor: pointer;
 }
@@ -67,6 +66,18 @@
     background-image: url("../../public/Image/daily-cut.png");
 }
 
+.activity_pic {
+    background-image: url("../../public/Image/activity-cut.png");
+}
+
+.history_pic {
+    background-image: url("../../public/Image/daily-cut.png");
+}
+
+.social_pic {
+    background-image: url("../../public/Image/daily-cut.png");
+}
+
 .intro_text_over {
     background-color: transparent;
     padding-left: 5px;
@@ -74,5 +85,11 @@
     padding-bottom: 10px;
     font-size: 16px;
     cursor: default;
-    color: #2D7714;
+    color: #286e10;
+}
+
+@media only screen and (max-width: 1270px) {
+    .cross_div {
+        display: none;
+    }
 }
