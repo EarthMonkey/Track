@@ -64,42 +64,52 @@
     </div>
 </div>
 
-<div class="pic_bg">
+<div class="sum_div">
 
-    <img src="/Track/public/Image/map.png" style="width: 90%;">
+    <div class="each_pic" style="margin: 10px auto; position: relative; left: -80px;"
+         onmouseenter="showIntro(0)" onmouseleave="hideIntro(0)"></div>
 
-    <div class="point" onmouseenter="showIntro(0)" onmouseleave="hideDiv('bubble')">
-        <!--<i class="fa fa-map-marker fa-2x"></i>-->
-        <span class="nav_lbl">日迹</span>
-    </div>
+    <div style="margin-top: 60px;">
 
-    <div class="point com" onmouseenter="showIntro(1)" onmouseleave="hideDiv('bubble')">
-        <!--<i class="fa fa-map-marker fa-2x"></i>-->
-        <span class="nav_lbl">赛迹</span>
-    </div>
+        <div class="each_pic daily_pic" style="display: inline-block; vertical-align: middle;margin-right: 3px;"
+             onmouseenter="showIntro(1)" onmouseleave="hideIntro(1)"></div>
 
-    <div class="point foot" onmouseenter="showIntro(2)" onmouseleave="hideDiv('bubble')">
-        <!--<i class="fa fa-map-marker fa-2x"></i>-->
-        <span class="nav_lbl">足迹</span>
-    </div>
+        <div class="cross_div">
 
-    <div class="point social" onmouseenter="showIntro(3)" onmouseleave="hideDiv('bubble')">
-        <!--<i class="fa fa-map-marker fa-2x"></i>-->
-        <span class="nav_lbl">人迹</span>
-    </div>
+            <div style="position: absolute; top: 110px;"
+                 onmouseenter="showIntro(1)" onmouseleave="hideIntro(1)">
+                <i class="fa fa-angle-left"></i>日迹
+            </div>
 
-    <div id="bubble" class="bubble_box" style="display: none;">
-        <div class="arrow">
-            <em></em>
+            <div style="position: absolute; left: 60px;"
+                 onmouseenter="showIntro(0)" onmouseleave="hideIntro(0)">
+                <i class="fa fa-angle-up"></i>赛迹
+            </div>
+
+            <div style="position: absolute; right: 5px; top: 110px;"
+                 onmouseenter="showIntro(2)" onmouseleave="hideIntro(2)">
+                足迹&nbsp;<i class="fa fa-angle-right"></i>
+            </div>
+
+            <div style="position: absolute; bottom: 0px; right: 100px;"
+                 onmouseenter="showIntro(3)" onmouseleave="hideIntro(3)">
+                人迹&nbsp;<i class="fa fa-angle-down"></i>
+            </div>
+
         </div>
-        <span></span>
+
+        <div class="each_pic" style="display: inline-block; vertical-align: middle;margin-left: 3px;"
+             onmouseenter="showIntro(2)" onmouseleave="hideIntro(2)"></div>
+
     </div>
 
+    <div class="each_pic" style="margin: 60px auto;  position: relative; left: 80px;"
+         onmouseenter="showIntro(3)" onmouseleave="hideIntro(3)"></div>
 </div>
 
 
 <div class="bottom_nav">
-    @Copyright  Sure
+    @Copyright Sure
 </div>
 
 <script src="/Track/public/js/login.js"></script>
