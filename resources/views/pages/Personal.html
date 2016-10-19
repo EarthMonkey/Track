@@ -57,7 +57,7 @@
 <div class="top_bg"></div>
 
 <!-- 左侧个人信息 -->
-<div class="left_nav_person">
+<div id="leftinfo" class="left_nav_person">
 
     <div class="p_img"></div>
     <div class="p_username">
@@ -93,13 +93,46 @@
 
 </div>
 
+<div class="right_div_person" style="padding-top: 2px; padding-bottom: 2px;">
+    <div>
+        <img src="/Track/public/Image/vip-intro.png" style="width: 100%;">
+    </div>
 
-<div class="right_div_person">
+    <div class="vip_btn">立即升级VIP</div>
+</div>
+
+<div class="right_div_person" style="margin-bottom: -15px;">
+
+    <div class="fans_div" style="margin-left: 70px; transform: rotate(4deg);">
+
+        <div style="width: 30px; position: absolute; left: 5px;">
+            <img src="/Track/public/Image/nail.png" style="width: 100%">
+        </div>
+
+        <div class="fans_title">我的关注</div>
+
+    </div>
+
+    <div class="fans_div" style="transform: rotate(-3deg);">
+
+        <div style="width: 30px; position: absolute; right: 5px;">
+            <img src="/Track/public/Image/nail.png" style="width: 100%">
+        </div>
+
+        <div class="fans_title">我的粉丝</div>
+
+    </div>
+
+</div>
+
+
+<div class="right_div_person" style="padding-bottom: 15px;">
 
     <div class="lead_text_p">
         我的兴趣爱好 &nbsp;&nbsp;
         <i class="fa fa-pencil" onclick="hobbyMod()"></i> &nbsp;
-        <i class="fa fa-plus" onclick="hobblyAdd()"></i>
+        <i class="fa fa-plus" onclick="hobbyAdd()"></i> &nbsp;
+        <i id="complete" style="display: none;" class="fa fa-check"></i>
     </div>
 
     <div id="hobbies">
@@ -110,7 +143,19 @@
                 <i class="fa fa-close"></i>
             </div>
         </div>
+    </div>
 
+</div>
+
+<div id="addhob" class="right_div_person down_div" style="padding-bottom: 15px; padding-top: 35px;">
+
+    <div id="hobadd_copy" style="display: none;">
+        <div class="hobby_lbl">
+            <div>瑜伽</div>
+            <div style="float: right;">
+                <i class="fa fa-plus" style="display: block;"></i>
+            </div>
+        </div>
     </div>
 
 </div>

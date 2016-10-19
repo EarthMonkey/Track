@@ -85,7 +85,7 @@ function getHobbies() {
 function hobbyMod() {
 
     var parent = document.getElementById("hobbies");
-    var lbls = document.getElementById("hobbies").getElementsByTagName("i");
+    var lbls = parent.getElementsByTagName("i");
     for (var i = 0; i < lbls.length; i++) {
         $(lbls[i]).show();
 
@@ -94,4 +94,69 @@ function hobbyMod() {
             parent.removeChild(node);
         }
     }
+
+    var complete = document.getElementById("complete");
+    $(complete).fadeIn();
+    complete.onclick = function () {
+        Complete();
+    }
+}
+
+// 增加兴趣
+function hobbyAdd() {
+
+    var parent = document.getElementById("addhob");
+    var copy = document.getElementById("hobadd_copy");
+
+    var num = parent.getElementsByTagName("i").length;
+    if (num > 1) {
+        $("#addhob").slideDown();
+        return;
+    }
+
+    var hob = ["瑜伽", "竞走", "马拉松", "攀岩", "游泳", "足球", "乒乓球", "网球", "柔道", "自行车"];
+
+    for (var i = 0; i < 10; i++) {
+        var div = document.createElement("div");
+        div.innerHTML = copy.innerHTML;
+        div.style.display = "inline-block";
+        div.getElementsByClassName("hobby_lbl")[0].getElementsByTagName("div")[0].innerHTML = hob[i];
+
+        var addbtn = div.getElementsByTagName("i")[0];
+        addbtn.onclick = function () {
+
+            var div = document.createElement("div");
+            div.innerHTML = document.getElementById("hobby_copy").innerHTML;
+            div.style.display = "inline-block";
+            div.getElementsByClassName("hobby_lbl")[0].getElementsByTagName("div")[0].innerHTML
+                = this.parentNode.parentNode.getElementsByTagName("div")[0].innerHTML;
+
+            document.getElementById("hobbies").appendChild(div);
+
+        };
+
+        parent.appendChild(div);
+    }
+
+    $("#addhob").slideDown();
+
+    var complete = document.getElementById("complete");
+    $(complete).fadeIn();
+    complete.onclick = function () {
+        Complete();
+    }
+}
+
+// 0,完成修改；1,完成增加
+function Complete() {
+
+    var lbls = document.getElementById("hobbies").getElementsByTagName("i");
+    for (var i = 0; i < lbls.length; i++) {
+        $(lbls[i]).hide();
+    }
+
+    $("#addhob").slideUp();
+
+
+    $("#complete").hide();
 }

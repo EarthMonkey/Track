@@ -3,14 +3,14 @@
  */
 
 function showPersonal() {
-    $("#personalbar").slideDown("slow");
+    $("#personalbar").slideDown();
 
     $(document).bind('click', function (e) {
         var elem = e.target || e.srcElement;
         if (elem.className && elem.className == "fa fa-sort-desc combox") {
             return;
         }
-        $('#personalbar').slideUp("normal");
+        $('#personalbar').slideUp();
     });
 
 }
