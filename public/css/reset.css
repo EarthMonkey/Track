@@ -4,6 +4,10 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, 
     font-family: "PingFang SC", serif;
 }
 
+body {
+    background-color: #f8f9f7;
+}
+
 table {
     border-collapse: collapse;
     border-spacing: 0;

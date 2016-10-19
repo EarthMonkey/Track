@@ -6,6 +6,8 @@
 
     <link href="/Track/public/css/common.css" rel="stylesheet">
     <link href="/Track/public/css/reset.css" rel="stylesheet">
+    <link href="/Track/public/css/personal.css" rel="stylesheet">
+    <link href="/Track/public/css/datetimepicker.min.css" rel="stylesheet">
     <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
@@ -24,14 +26,14 @@
         <div class="nav" onclick="window.location.href='Daily.html'">日迹</div>
         <div class="nav" onclick="window.location.href='Activity.html'">赛迹</div>
         <div class="nav" onclick="window.location.href='History.html'">足迹</div>
-        <div class="nav active" onclick="window.location.href='Social.html'">人迹</div>
+        <div class="nav" onclick="window.location.href='Social.html'">人迹</div>
     </div>
 
-    <div class="personal_div">
-
-        <div class="photo"></div>
-        <div class="userId">sure</div>
-        <div class="fa fa-sort-desc combox" onclick="showPersonal()"></div>
+    <div class="personal_div" style="background-color: transparent; width: auto; display: inline">
+        <div class="menu_person" style="background-color: transparent;" onclick="Signout()">
+            <img src="/Track/public/Image/signout.svg" class="person_icon" style="top: 4px; left: 5px;">
+            <span class="person_lbl">注&nbsp;销&nbsp;&nbsp;</span>
+        </div>
     </div>
 
     <div class="nav_btn">
@@ -43,7 +45,7 @@
 <div id="personalbar" class="personal_bar" style="display: none">
     <div class="menu_person">
         <img src="/Track/public/Image/person.svg" class="person_icon">
-        <span class="person_lbl">个人中心</span>
+        <span class="person_lbl" onclick="window.location.href='Personal.html'">个人中心</span>
     </div>
 
     <div class="menu_person" onclick="Signout()">
@@ -54,43 +56,65 @@
 
 <div class="top_bg"></div>
 
-<!-- 左侧导航栏 -->
-<div class="left_nav">
+<!-- 左侧个人信息 -->
+<div class="left_nav_person">
 
-    <div class="sub_nav">
-        我的运动
-        <i class="fa fa-angle-right"></i>
+    <div class="p_img"></div>
+    <div class="p_username">
+        <input class="p_text" type="text" value="用户名" readonly="true">
     </div>
 
-    <div class="hide_bar sport"></div>
-
-    <div class="sub_nav">
-        睡眠分析
-        <i class="fa fa-angle-right"></i>
+    <div class="title_lbl">地区</div>
+    <div class="p_username">
+        <input class="p_text" style="font-size: 14px;" type="text" value="江苏省 南京市 鼓楼区" readonly>
     </div>
 
-    <div class="hide_bar sleep"></div>
+    <div class="title_lbl">个人主页</div>
+    <div class="p_username">
+        <input class="p_text" style="font-size: 14px;" type="text" value="xxx.xxxxx.xxx" readonly>
+    </div>
 
-    <div class="sub_nav">
-        身体管理
-        <i class="fa fa-angle-right"></i>
+    <div class="title_lbl">邮箱</div>
+    <div class="p_username">
+        <input class="p_text" style="font-size: 14px;" type="text" value="794637366@qq.com" readonly>
+    </div>
+
+    <div class="title_lbl">生日</div>
+    <div class="p_username">
+        <input id="birth" class="p_text" style="font-size: 14px;" type="text" value="1996-12-15" readonly disabled>
+    </div>
+
+
+    <div class="update_btn" onclick="updateInfo()">更新资料</div>
+    <div class="p_username" style="margin-top: -10px;">
+        <i class="fa fa-check"></i>
+        <i class="fa fa-close"></i>
     </div>
 
 </div>
 
 
-<div class="right_div">
+<div class="right_div_person">
 
+    <div class="lead_text_p" style="margin-top: -40px;">您的兴趣爱好</div>
 
 </div>
-
 
 
 <div class="bottom_nav">
-    @Copyright  Sure
+    @Copyright Sure
 </div>
 
 <script src="/Track/public/js/common.js"></script>
 <script src="/Track/public/js/jquery.js"></script>
+<script src="/Track/public/js/personal.js"></script>
+<script src="/Track/public/js/datetimepicker.js"></script>
+<script>
+    $('#birth').datetimepicker({
+        lang : 'ch',
+        timepicker : false,
+        format : 'Y-m-d'
+    });
+</script>
 </body>
 </html>
