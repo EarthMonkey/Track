@@ -96,7 +96,22 @@
 
 <div class="right_div_person">
 
-    <div class="lead_text_p" style="margin-top: -40px;">您的兴趣爱好</div>
+    <div class="lead_text_p">
+        我的兴趣爱好 &nbsp;&nbsp;
+        <i class="fa fa-pencil" onclick="hobbyMod()"></i> &nbsp;
+        <i class="fa fa-plus" onclick="hobblyAdd()"></i>
+    </div>
+
+    <div id="hobbies">
+
+        <div id="hobby_copy" style="display: none;">
+            <div class="hobby_lbl">
+                <div>桌球</div>
+                <i class="fa fa-close"></i>
+            </div>
+        </div>
+
+    </div>
 
 </div>
 
@@ -111,9 +126,9 @@
 <script src="/Track/public/js/datetimepicker.js"></script>
 <script>
     $('#birth').datetimepicker({
-        lang : 'ch',
-        timepicker : false,
-        format : 'Y-m-d'
+        lang: 'ch',
+        timepicker: false,
+        format: 'Y-m-d'
     });
 </script>
 </body>

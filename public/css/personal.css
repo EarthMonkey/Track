@@ -75,7 +75,7 @@
 
 input:disabled {
     background-color: transparent;
-    color:#3e5e45;
+    color: #3e5e45;
 }
 
 .update_btn {
@@ -98,10 +98,51 @@ input:disabled {
 }
 
 .lead_text_p {
-    font-size: 24px;
-    margin-top: 5px;
-    margin-bottom: 30px;
-    margin-left: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-left: 25px;
+    margin-top: -30px;
+}
+
+.lead_text_p i {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.lead_text_p i:hover {
+    opacity: 1;
+}
+
+.hobby_lbl {
+    width: 130px;
+    height: 30px;
+    background: -webkit-linear-gradient(bottom left, #e2f3d1, #cdeaaf);
+    transform: skew(-20deg);
+    box-shadow: 0 0 10px #c1c1c1;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 30px;
+    color: #3e5e45;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.hobby_lbl div {
+    transform: skew(20deg);
+    display: inline-block;
+}
+
+.hobby_lbl i {
+    opacity: 0.7;
+    cursor: pointer;
+    float: right;
+    margin-right: 3px;
+    display: none;
+}
+
+.hobby_lbl i:hover {
+    opacity: 1;
 }
 
 @media screen and (max-width: 1050px) {
