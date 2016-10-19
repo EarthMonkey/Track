@@ -31,6 +31,7 @@
     height: 180px;
     box-shadow: 0 0 7px #d8d8d8;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .each_pic:hover {
@@ -49,7 +50,7 @@
     font-size: 26px;
     font-style: italic;
     color: #4c26da;
-    text-shadow:  3px -3px 5px #5a45a7;
+    text-shadow: 3px -3px 5px #5a45a7;
     position: relative;
 }
 
@@ -59,37 +60,56 @@
 }
 
 .cross_div div:hover {
-    color: #6A6AEC;
+    color: #6a6aec;
 }
 
 .daily_pic {
     background-image: url("../../public/Image/daily-cut.png");
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
 }
 
 .activity_pic {
     background-image: url("../../public/Image/activity-cut.png");
+    margin: 10px auto;
+    position: relative;
+    left: -80px;
 }
 
 .history_pic {
     background-image: url("../../public/Image/history-cut.png");
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 3px;
 }
 
 .social_pic {
-    background-image: url("../../public/Image/daily-cut.png");
+    background-image: url("../../public/Image/social-cut.png");
+    margin: 60px auto;
+    position: relative;
+    left: 50px;
 }
 
 .intro_text_over {
+    width: 70%;
+    font-size: 18px;
+    margin: auto auto;
     background-color: transparent;
-    padding-left: 5px;
-    padding-top: 75px;
+    padding-top: 40px;
     padding-bottom: 10px;
-    font-size: 16px;
     cursor: default;
-    color: #165501;
+    color: #0b2609;
 }
 
 @media only screen and (max-width: 1270px) {
     .cross_div {
         display: none;
+    }
+
+    .history_pic, .daily_pic, .activity_pic, .social_pic {
+        position: inherit;
+        margin: 15px auto;
+        display: inherit;
     }
 }

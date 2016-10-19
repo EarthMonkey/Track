@@ -1,0 +1,49 @@
+.dy_user {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    background-color: #d8d8d8;
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dy_user_div {
+    display: inline-block;
+    vertical-align: middle;
+    color: #193816;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.userId_div {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.userId_div:hover {
+    color: #3c8436;
+}
+
+.dy_content {
+    max-height: 84px;
+    overflow: hidden;
+    margin-top: 10px;
+    padding: 5px 0;
+    border-top: 1px solid #CEE7C2;
+    border-bottom: 1px solid #CEE7C2;
+}
+
+.dy_zan {
+    font-size: 14px;
+    color: #2a9321;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.dy_zan:hover {
+    color: #43c138;
+}
