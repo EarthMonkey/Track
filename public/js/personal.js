@@ -107,9 +107,11 @@ function hobbyAdd() {
 
     var parent = document.getElementById("addhob");
     var copy = document.getElementById("hobadd_copy");
+    var complete = document.getElementById("complete");
 
     var num = parent.getElementsByTagName("i").length;
     if (num > 1) {
+        $(complete).fadeIn();
         $("#addhob").slideDown();
         return;
     }
@@ -140,7 +142,6 @@ function hobbyAdd() {
 
     $("#addhob").slideDown();
 
-    var complete = document.getElementById("complete");
     $(complete).fadeIn();
     complete.onclick = function () {
         Complete();
@@ -156,7 +157,6 @@ function Complete() {
     }
 
     $("#addhob").slideUp();
-
 
     $("#complete").hide();
 }
