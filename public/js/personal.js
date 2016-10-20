@@ -160,3 +160,16 @@ function Complete() {
 
     $("#complete").hide();
 }
+
+function hideVip() {
+    $("#vip_ad").hide(700);
+    $("#vip").show(700);
+}
+
+function showVip() {
+    if (document.body.scrollTop > 128) {
+        $('html,body').animate({scrollTop: '0px'}, 100);
+    }
+    $("#vip").hide(700);
+    $("#vip_ad").show(700);
+}

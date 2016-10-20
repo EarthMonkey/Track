@@ -89,6 +89,16 @@
     vertical-align: middle;
 }
 
+.hide_eye {
+    width: 80px;
+    padding: 3px 5px;
+    cursor: pointer;
+}
+
+.hide_eye:hover {
+    opacity: 0.9;
+}
+
 @media only screen and (max-width: 1100px) {
 
     .hide_launch {

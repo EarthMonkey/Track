@@ -58,21 +58,21 @@
 <!-- 左侧导航栏 -->
 <div class="left_nav">
 
-    <div class="sub_nav sub-active">
+    <div class="sub_nav sub-active" onclick="changeTab(0)">
         好友动态
         <i class="fa fa-angle-right"></i>
     </div>
 
     <!--<div class="hide_bar sport"></div>-->
 
-    <div class="sub_nav">
+    <div class="sub_nav" onclick="changeTab(1)">
         我的关注
         <i class="fa fa-angle-right"></i>
     </div>
 
     <!--<div class="hide_bar sleep"></div>-->
 
-    <div class="sub_nav">
+    <div class="sub_nav" onclick="changeTab(2)">
         我的粉丝
         <i class="fa fa-angle-right"></i>
     </div>
@@ -80,10 +80,9 @@
 </div>
 
 
-<div class="right_div">
+<div id="mydynamic" class="right_div">
 
     <div id="dynamics" style="width: 80%; margin: 20px auto;">
-
         <div id="dynamic_copy" style="display: none;">
             <div>
                 <div class="dy_user"></div>
@@ -108,8 +107,15 @@
                 </div>
             </div>
         </div>
-
     </div>
+
+</div>
+
+<div id="myconcern" class="right_div" style="display: none;">
+
+</div>
+
+<div id="myfans" class="right_div" style="display: none;">
 
 </div>
 

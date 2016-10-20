@@ -93,7 +93,15 @@
 
 </div>
 
-<div class="right_div_person" style="padding-top: 2px; padding-bottom: 2px;">
+<div id="vip" class="vip_btn_left vip_btn" onclick="showVip()">立即升级VIP</div>
+
+<div id="vip_ad" class="right_div_person" style="padding-top: 2px; padding-bottom: 2px; position: relative;">
+
+    <div class="hide_eye" onclick="hideVip()">
+        <i class="fa fa-eye-slash"></i><br>
+        <span style="font-size: 14px;position: relative; top: -15px;">隐藏</span>
+    </div>
+
     <div>
         <img src="/Track/public/Image/vip-intro.png" style="width: 100%;">
     </div>
@@ -109,7 +117,7 @@
             <img src="/Track/public/Image/nail.png" style="width: 100%">
         </div>
 
-        <div class="fans_title">我的关注</div>
+        <div class="fans_title">我的目标</div>
 
     </div>
 
@@ -119,7 +127,7 @@
             <img src="/Track/public/Image/nail.png" style="width: 100%">
         </div>
 
-        <div class="fans_title">我的粉丝</div>
+        <div class="fans_title">近期计划</div>
 
     </div>
 

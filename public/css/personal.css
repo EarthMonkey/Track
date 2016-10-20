@@ -8,13 +8,13 @@
     top: 130px;
     left: 55px;
     border: none;
-    box-shadow: 0 0 10px #9EA891;
+    box-shadow: 0 0 10px #9ea891;
 }
 
 .right_div_person {
     width: 63%;
     background-color: #f3faef;
-    opacity: 0.7;
+    opacity: 0.85;
     margin-left: 28%;
     margin-top: 60px;
     border: none;
@@ -192,6 +192,33 @@ input:disabled {
     background-color: #ff5d00;
 }
 
+.vip_btn_left {
+    width: 230px;
+    height: 50px;
+    position: fixed;
+    top: 520px;
+    left: 55px;
+    border: none;
+    box-shadow: 0 0 10px #9ea891;
+    opacity: 0.8;
+    display: none;
+}
+
+.vip_btn_left:hover {
+    opacity: 0.9;
+}
+
+.hide_eye {
+    font-size: 26px;
+    position: absolute;
+    left: 15px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.hide_eye:hover {
+    opacity: 1;
+}
 
 @media screen and (max-width: 1050px) {
 

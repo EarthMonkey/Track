@@ -70,8 +70,6 @@
     background-color: #d5ebcc;
 }
 
-
-
 @media only screen and (max-width: 1100px) {
     .sport {
         background-image: url("../../public/Image/run-white.png");
@@ -107,9 +105,81 @@
 
 }
 
+.chart_sum_div {
+    width: 300px;
+    height: 350px;
+    background-color: #f9fbf8;
+    box-shadow: 0 2px 4px #7c8c77;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 80px;
+    position: relative;
+    transform: rotate(1deg);
+}
+
+.sleep_title {
+    width: 150px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #233a28;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #233a28;
+    text-align: center;
+    margin: 15px auto;
+}
+
+.dashboard_div {
+    width: 350px;
+    height: 350px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 75px;
+}
+
+.sleep_advice {
+    font-size: 17px;
+    margin: 30px auto;
+    width: 220px;
+    text-align: center
+}
+
+.sleep_advice span {
+    font-weight: 600;
+}
+
+.sleep_level {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #85a944;
+    font-size: 28px;
+    color: #fff;
+    text-align: center;
+    line-height: 80px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.sleep_comment {
+    width: 100px;
+    color: #85a944;
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+}
+
 @media only screen and (max-width: 850px) {
     .chart_div, .hide_text {
         display: none;
+    }
+
+    .dashboard_div {
+        margin: 15px 1px;
+    }
+
+    .chart_sum_div {
+        margin-left: 30px;
     }
 }
 

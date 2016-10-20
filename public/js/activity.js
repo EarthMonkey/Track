@@ -24,10 +24,26 @@ function changeTab(index) {
     var Ids = ["#acts", "#myact"];
     var subs = document.getElementsByClassName("sub_nav");
 
-    $(Ids[(index + 1) % 2]).hide();
-    $(Ids[index]).fadeIn(1000);
+    $(Ids[(index + 1) % 2]).hide(500);
+    $(Ids[index]).show(800);
 
-    subs[(index+1)%2].className = "sub_nav";
+    subs[(index + 1) % 2].className = "sub_nav";
     subs[index].className = "sub_nav sub-active";
+
+}
+
+function hidePic(node) {
+
+    var order = node.getElementsByTagName("span")[0];
+
+    if (order.innerHTML.trim() == "隐藏") {
+        $("#intropic").hide(600);
+        // $(node).css("top", "-50px");
+        order.innerHTML = "显示";
+    } else {
+        $("#intropic").show(600);
+        // $(node).css("top", "-58px");
+        order.innerHTML = "隐藏";
+    }
 
 }

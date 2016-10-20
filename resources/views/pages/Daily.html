@@ -75,16 +75,16 @@
 
     <div class="hide_bar sport" onclick="changeTab(0)"></div>
 
-    <div class="hide_bar sleep"  onclick="changeTab(1)"></div>
+    <div class="hide_bar sleep" onclick="changeTab(1)"></div>
 
-    <div class="hide_bar hide_body"  onclick="changeTab(2)">
+    <div class="hide_bar hide_body" onclick="changeTab(2)">
         <i class="fa fa-plus-square fa-2x "></i>
     </div>
 
 </div>
 
 
-<div id="mysport" class="right_div">
+<div id="mysport" class="right_div" style="display: block">
 
     <div class="lead_text">您今天的运动状况</div>
     <div style="margin-left: 80px;">
@@ -166,7 +166,45 @@
 
 </div>
 
-<div id="mysleep" class="right_div" style="display: none;"></div>
+<div id="mysleep" class="right_div" style="display: none;">
+
+    <div id="dashboard" class="dashboard_div"></div>
+
+    <div class="chart_sum_div">
+
+        <div style="width: 30px; position: absolute; left: 5px;">
+            <img src="/Track/public/Image/nail.png" style="width: 100%">
+        </div>
+
+        <div class="sleep_title">昨夜睡眠情况</div>
+
+        <div class="sleep_advice">
+
+            <div>
+                <i class="fa fa-bed"></i>&nbsp;入睡时间&nbsp; <span>00 : 00</span>
+            </div>
+            <div style="margin-top: 10px;">
+                <i class="fa fa-child"></i>&nbsp;起床时间&nbsp; <span>10 : 30</span>
+            </div>
+
+            <div style="margin-top: 50px;">
+
+                <div class="sleep_level">
+                    健康
+                </div>
+
+                <div class="sleep_comment">
+                    您的睡眠习惯很健康,请继续保持
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 <div id="mybody" class="right_div" style="display: none;"></div>
 
@@ -177,5 +215,7 @@
 <script src="/Track/public/js/common.js"></script>
 <script src="/Track/public/js/jquery.js"></script>
 <script src="/Track/public/js/daily.js"></script>
+<script src="/Track/public/js/echarts.min.js"></script>
+<script src="/Track/public/js/dashboardchart.js"></script>
 </body>
 </html>
