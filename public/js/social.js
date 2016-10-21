@@ -4,6 +4,8 @@
 
 window.onload = function () {
     getAllDynamics();
+    getMyConcerns();
+    getMyFans();
 }
 
 function getAllDynamics() {
@@ -36,4 +38,32 @@ function changeTab(index) {
     subs[(index + 2) % 3].className = "sub_nav";
     subs[index].className = "sub_nav sub-active";
 
+}
+
+function getMyConcerns() {
+
+    var parent = document.getElementById("myconcern");
+    var copy = document.getElementById("fan_info_copy");
+
+    for (var i = 0; i < 5; i++) {
+        var div = document.createElement("div");
+        div.className = "each_fan";
+
+        div.innerHTML = copy.innerHTML;
+        parent.appendChild(div);
+    }
+}
+
+function getMyFans() {
+
+    var parent = document.getElementById("myfans");
+    var copy = document.getElementById("fan_info_copy");
+
+    for (var i = 0; i < 5; i++) {
+        var div = document.createElement("div");
+        div.className = "each_fan";
+
+        div.innerHTML = copy.innerHTML;
+        parent.appendChild(div);
+    }
 }

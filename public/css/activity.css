@@ -99,6 +99,53 @@
     opacity: 0.9;
 }
 
+.record_div {
+    width: 85%;
+    padding: 15px 0;
+    margin: 10px auto;
+    background-color: #fff;
+    opacity: 0.8;
+    box-shadow: 0 2px 4px #afb8ae;
+    color: #454744;
+    font-size: 20px;
+}
+
+.record_div div {
+    width: 120px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px 12px;
+}
+
+.record_div span {
+    font-size: 22px;
+    color: #386025;
+}
+
+.lead_text i {
+    position: relative;
+    top: -7px;
+    cursor: pointer;
+}
+
+.lead_text i:hover {
+    color: #386025;
+}
+
+.slide_div {
+    width: 85%;
+    padding: 15px 0;
+    margin: 10px auto;
+    margin-top: -20px;
+    background-color: #fff;
+    opacity: 0.8;
+    box-shadow: 0 2px 4px #afb8ae;
+    color: #454744;
+    font-size: 20px;
+}
+
+
 @media only screen and (max-width: 1100px) {
 
     .hide_launch {

@@ -1,5 +1,5 @@
 // time睡眠时长
-function getDashbord(id, time) {
+function getDashbord(kind, id, time) {
 
     var myChart = echarts.init(document.getElementById(id));
 
@@ -29,15 +29,30 @@ function getDashbord(id, time) {
         maxval = 24
     }
 
+    var namek;
+    var tipk;
+    var splitnum = 6;
+    if (kind == "sleep") {
+        namek = "睡眠时长";
+        tipk = "睡眠时长 / 小时";
+    } else if (kind == "body") {
+        namek = "体重";
+        tipk = "体重 / 公斤";
+        maxval = 140;
+        splitnum = 14;
+        bgcolor = "#85A944";  // 表盘色
+        ptcolor = "#445A1B";  // 指针色
+    }
+
     var option = {
         series: [
             {
-                name: '睡眠时长',
+                name: namek,
                 type: 'gauge',
                 min: 0,
                 max: maxval,
                 radius: '100%',
-                splitNumber: 6,
+                splitNumber: splitnum,
                 axisLine: {            // 坐标轴线
                     lineStyle: {       // 属性lineStyle控制线条样式
                         color: [[(time / maxval)-0.00001, bgcolor], [(time / maxval), ptcolor], [1, '#d8d8d8']],
@@ -74,7 +89,7 @@ function getDashbord(id, time) {
                     width: 7,
                     color: ptcolor
                 },
-                data: [{name: '睡眠时长 / 小时', value: time}]
+                data: [{name: tipk, value: time}]
             }
         ]
     };

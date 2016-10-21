@@ -32,15 +32,6 @@
     margin-top: -90px;
 }
 
-.chart_weight {
-    width: 90%;
-    height: 300px;
-    background: -webkit-linear-gradient(left bottom, #dbf5cb, #f6fbf3);
-    margin: 20px auto;
-    border-radius: 4px;
-    box-shadow: 0 0 4px #d3d8d0;
-}
-
 @media screen and (max-width: 610px) {
     .mid_img {
         margin: -40px 52px;

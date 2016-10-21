@@ -4,6 +4,8 @@
 
 window.onload = function () {
     getAllActs();
+    getMyLaunch();
+    getMyPartin();
 };
 
 function getAllActs() {
@@ -45,5 +47,32 @@ function hidePic(node) {
         // $(node).css("top", "-58px");
         order.innerHTML = "隐藏";
     }
+}
 
+function getMyLaunch() {
+
+    var parent = document.getElementById("mylaunch");
+    var copy = document.getElementById("act_copy");
+    copy.getElementsByClassName("each_act")[0].style.width = "95%";
+
+    for (var i = 0; i < 3; i++) {
+        var div = document.createElement("div");
+        div.innerHTML = copy.innerHTML;
+
+        parent.appendChild(div);
+    }
+}
+
+function getMyPartin() {
+
+    var parent = document.getElementById("mypartin");
+    var copy = document.getElementById("act_copy");
+    copy.getElementsByClassName("each_act")[0].style.width = "95%";
+
+    for (var i = 0; i < 3; i++) {
+        var div = document.createElement("div");
+        div.innerHTML = copy.innerHTML;
+
+        parent.appendChild(div);
+    }
 }
