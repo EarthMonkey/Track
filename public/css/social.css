@@ -113,3 +113,7 @@ input:disabled {
     color: #3e5e45;
     overflow: hidden;
 }
+
+.detail_hide {
+    display: none;
+}

@@ -22,8 +22,6 @@ function changeTab(index) {
     subs[(index + 1) % 3].className = "sub_nav";
     subs[(index + 2) % 3].className = "sub_nav";
     subs[index].className = "sub_nav sub-active";
-
-    getSleepData();
 }
 
 function getSleepData() {

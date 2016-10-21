@@ -49,6 +49,20 @@ function getMyConcerns() {
         var div = document.createElement("div");
         div.className = "each_fan";
 
+        div.onmouseenter = function () {
+            var details = this.getElementsByClassName("detail_hide");
+            for(var j=0; j<details.length; j++) {
+                $(details[j]).slideDown();
+            }
+        };
+        
+        div.onmouseleave = function () {
+            var details = this.getElementsByClassName("detail_hide");
+            for(var j=0; j<details.length; j++) {
+                $(details[j]).slideUp();
+            }
+        };
+
         div.innerHTML = copy.innerHTML;
         parent.appendChild(div);
     }
@@ -62,6 +76,20 @@ function getMyFans() {
     for (var i = 0; i < 5; i++) {
         var div = document.createElement("div");
         div.className = "each_fan";
+
+        div.onmouseenter = function () {
+            var details = this.getElementsByClassName("detail_hide");
+            for(var j=0; j<details.length; j++) {
+                $(details[j]).slideDown();
+            }
+        };
+
+        div.onmouseleave = function () {
+            var details = this.getElementsByClassName("detail_hide");
+            for(var j=0; j<details.length; j++) {
+                $(details[j]).slideUp();
+            }
+        };
 
         div.innerHTML = copy.innerHTML;
         parent.appendChild(div);
