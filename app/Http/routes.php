@@ -12,7 +12,31 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/Login');
+});
+
+Route::get('/HomePage', function () {
+    return view('pages/HomePage');
+});
+
+Route::get('/Daily', function () {
+    return view('pages/Daily');
+});
+
+Route::get('/Activity', function () {
+    return view('pages/Activity');
+});
+
+Route::get('/History', function () {
+    return view('pages/History');
+});
+
+Route::get('/Personal', function () {
+    return view('pages/Personal');
+});
+
+Route::get('/Social', function () {
+    return view('pages/Social');
 });
 
 /*

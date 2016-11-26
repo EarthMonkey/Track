@@ -11,7 +11,7 @@ function change(syb) {
 }
 
 function login() {
-    window.location.href = "/Track/resources/views/pages/HomePage.html";
+    window.location.href = "HomePage";
 }
 
 function Register() {
