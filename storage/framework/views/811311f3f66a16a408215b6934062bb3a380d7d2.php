@@ -23,13 +23,14 @@
 
 <!-- 登录 -->
 <div id="log" class="login_div">
+
     <div>
         <div class="username">用户名：</div>
         <input type="text" class="username_field">
     </div>
 
-    <div>
-        <div class="username" style="margin-top: 25px">密&nbsp;&nbsp;&nbsp;码：</div>
+    <div style="margin-top: 25px">
+        <div class="username">密&nbsp;&nbsp;&nbsp;码：</div>
         <input type="password" class="username_field">
     </div>
 
@@ -46,17 +47,17 @@
         <input type="text" class="username_field">
     </div>
 
-    <div>
-        <div class="username" style="margin-top: 25px">&nbsp;密&nbsp;&nbsp;&nbsp;码：</div>
+    <div style="margin-top: 25px">
+        <div class="username">&nbsp;密&nbsp;&nbsp;&nbsp;码：</div>
         <input type="password" class="username_field">
     </div>
 
-    <div>
-        <div class="username" style="margin-top: 25px; font-size: 22px;">确认密码：</div>
+    <div style="margin-top: 25px;">
+        <div class="username" style="font-size: 22px;">确认密码：</div>
         <input type="password" class="username_field">
     </div>
 
-    <div class="login_btn" style="width: 350px">注册</div>
+    <div class="login_btn" style="width: 350px" onclick="Register()">注册</div>
 
     <div class="login_tip" onclick="change(0)">已有账号？立即登录</div>
 </div>

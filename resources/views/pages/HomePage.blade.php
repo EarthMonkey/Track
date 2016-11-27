@@ -31,7 +31,7 @@
     <div class="personal_div">
 
         <div class="photo"></div>
-        <div class="userId">sure</div>
+        <div class="userId">{!! $username !!}</div>
         <div class="fa fa-sort-desc combox" onclick="showPersonal()"></div>
     </div>
 

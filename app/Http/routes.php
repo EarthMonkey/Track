@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -15,8 +17,17 @@ Route::get('/', function () {
     return view('pages/Login');
 });
 
-Route::get('/HomePage', function () {
-    return view('pages/HomePage');
+// 登录注册
+Route::get('Register/{username}/{password}', 'LoginController@register');
+
+Route::get('CheckRepeat', 'LoginController@checkRepeat');
+
+Route::get('Login', 'LoginController@login');
+
+// 首页
+Route::get('/HomePage/{username}/{userId}', function ($username, $userId) {
+    $_SESSION['userId'] = $userId;
+    return view('pages/HomePage', ['username' => $username]);
 });
 
 Route::get('/Daily', function () {

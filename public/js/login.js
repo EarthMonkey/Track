@@ -11,13 +11,120 @@ function change(syb) {
 }
 
 function login() {
-    window.location.href = "HomePage";
+
+    var fields = document.getElementById("log").getElementsByTagName("input");
+    var inputs = new Array(2);
+    for (var i = 0; i < fields.length; i++) {
+        inputs[i] = fields[i].value;
+    }
+
+    var lbl = document.createElement("label");
+    lbl.className = 'error_lbl';
+    lbl.style.right = '25px';
+
+    if (inputs[0] == '') {
+        lbl.innerHTML = '请输入用户名';
+        fields[0].parentNode.append(lbl);
+        fields[0].onclick = function () {
+            lbl.remove();
+        };
+    } else if (inputs[1] == '') {
+        lbl.innerHTML = '请输入密码';
+        fields[1].parentNode.append(lbl);
+        fields[1].onclick = function () {
+            lbl.remove();
+        };
+    } else {
+
+        $.ajax({
+            url: 'Login',
+            type: 'get',
+            data: {
+                'username': inputs[0],
+                'password': inputs[1]
+            },
+            success: function (result) {
+                if (result == -2) {
+                    lbl.innerHTML = '用户名不存在';
+                    fields[0].parentNode.append(lbl);
+                    fields[0].onclick = function () {
+                        lbl.remove();
+                    };
+                } else if (result == '') {
+                    lbl.innerHTML = '密码错误';
+                    fields[1].parentNode.append(lbl);
+                    fields[1].onclick = function () {
+                        lbl.remove();
+                    };
+                } else {
+                    window.location.href = 'HomePage/' + inputs[0] + '/' + result[0].id;
+                }
+            },
+            error: function () {
+                alert('登录失败');
+            }
+        });
+
+    }
 }
 
 function Register() {
 
-}
+    var fields = document.getElementById("reg").getElementsByTagName("input");
+    var inputs = new Array(3);
+    for (var i = 0; i < fields.length; i++) {
+        inputs[i] = fields[i].value;
+    }
 
+    var lbl = document.createElement("label");
+    lbl.className = 'error_lbl';
+
+    if (inputs[0] == '') {
+        lbl.innerHTML = '请输入用户名';
+        fields[0].parentNode.append(lbl);
+        fields[0].onclick = function () {
+            lbl.remove();
+        };
+    } else if (inputs[1] == '') {
+        lbl.innerHTML = '请输入密码';
+        fields[1].parentNode.append(lbl);
+        fields[1].onclick = function () {
+            lbl.remove();
+        };
+    } else {
+        if (inputs[1] == [inputs[2]]) {
+
+            $.ajax({
+                url: 'CheckRepeat',
+                type: 'get',
+                data: {
+                    'username': inputs[0]
+                },
+                success: function (result) {
+                    if (result > 0) {
+                        lbl.innerHTML = '该用户名已存在';
+                        fields[0].parentNode.append(lbl);
+                        fields[0].onclick = function () {
+                            lbl.remove();
+                        };
+                    } else {
+                        window.location.href = 'Register/' + inputs[0] + '/' + inputs[1];
+                    }
+                },
+                error: function () {
+                    alert('注册失败')
+                }
+            });
+
+        } else {
+            lbl.innerHTML = '两次密码不一致';
+            fields[2].parentNode.append(lbl);
+            fields[2].onclick = function () {
+                lbl.remove();
+            };
+        }
+    }
+}
 
 function showDiv(elem_id) {
     $("#" + elem_id).fadeIn("slow");

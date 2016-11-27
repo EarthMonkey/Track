@@ -42,6 +42,10 @@
     left: 440px;
 }
 
+.login_div div {
+    position: relative;
+}
+
 .username {
     font-size: 25px;
     font-family: "PingFang SC", serif;
@@ -99,4 +103,16 @@
 
 .login_tip:hover {
     opacity: 0.9;
+}
+
+.parent_div {
+    height: 40px;
+    position: relative;
+}
+
+.error_lbl {
+    color: #ff0000;
+    position: absolute;
+    right: 15px;
+    top: 10px;
 }

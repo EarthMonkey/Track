@@ -16,7 +16,7 @@ function showPersonal() {
 }
 
 function Signout() {
-    window.location.href = "/resources/views/pages/Login.blade.php";
+    window.location.href = "Track/public";
 }
 
 
