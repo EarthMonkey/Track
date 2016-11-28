@@ -21,17 +21,17 @@
     </div>
 
     <div class="navs">
-        <div class="nav" onclick="window.location.href='HomePage'">首页</div>
-        <div class="nav" onclick="window.location.href='Daily'">日迹</div>
-        <div class="nav" onclick="window.location.href='Activity'">赛迹</div>
-        <div class="nav active" onclick="window.location.href='History'">足迹</div>
-        <div class="nav" onclick="window.location.href='Social'">人迹</div>
+        <div class="nav" onclick="window.location.href='/Track/public/HomePage/<?php echo $username; ?>/<?php echo $userId; ?>'">首页</div>
+        <div class="nav" onclick="window.location.href='/Track/public/Daily/<?php echo $username; ?>/<?php echo $userId; ?>'">日迹</div>
+        <div class="nav" onclick="window.location.href='/Track/public/Activity/<?php echo $username; ?>/<?php echo $userId; ?>'">赛迹</div>
+        <div class="nav active" onclick="window.location.href='/Track/public/History/<?php echo $username; ?>/<?php echo $userId; ?>'">足迹</div>
+        <div class="nav" onclick="window.location.href='/Track/public/Social/<?php echo $username; ?>/<?php echo $userId; ?>'">人迹</div>
     </div>
 
     <div class="personal_div">
 
         <div class="photo"></div>
-        <div class="userId">sure</div>
+        <div class="userId"><?php echo $username; ?></div>
         <div class="fa fa-sort-desc combox" onclick="showPersonal()"></div>
     </div>
 

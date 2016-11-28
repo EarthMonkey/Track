@@ -26,28 +26,40 @@ Route::get('Login', 'LoginController@login');
 
 // 首页
 Route::get('/HomePage/{username}/{userId}', function ($username, $userId) {
-    $_SESSION['userId'] = $userId;
-    return view('pages/HomePage', ['username' => $username]);
+    return view('pages/HomePage', ['username' => $username, 'userId' => $userId]);
 });
 
-Route::get('/Daily', function () {
-    return view('pages/Daily');
+// 日迹
+Route::get('/Daily/{username}/{userId}', function ($username, $userId) {
+    return view('pages/Daily', ['username' => $username, 'userId' => $userId]);
 });
 
-Route::get('/Activity', function () {
-    return view('pages/Activity');
+Route::get('DailySport', 'DailyController@getDaily');
+
+Route::get('DailySleep', 'DailyController@getSleep');
+
+Route::get('DailyBody', 'DailyController@getBody');
+
+// 赛迹
+Route::get('/Activity/{username}/{userId}', function ($username, $userId) {
+    return view('pages/Activity', ['username' => $username, 'userId' => $userId]);
 });
 
-Route::get('/History', function () {
-    return view('pages/History');
+// 足迹
+Route::get('/History/{username}/{userId}', function ($username, $userId) {
+    return view('pages/History', ['username' => $username, 'userId' => $userId]);
 });
 
-Route::get('/Personal', function () {
-    return view('pages/Personal');
+// 个人中心
+Route::get('/Personal/{username}/{userId}', function ($username, $userId) {
+    return view('pages/Personal', ['username' => $username, 'userId' => $userId]);
 });
 
-Route::get('/Social', function () {
-    return view('pages/Social');
+Route::get('PersonalInfo', 'PersonalController@getUserInfo');
+
+// 人迹
+Route::get('/Social/{username}/{userId}', function ($username, $userId) {
+    return view('pages/Social', ['username' => $username, 'userId' => $userId]);
 });
 
 /*

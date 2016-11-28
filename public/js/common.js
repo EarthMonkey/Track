@@ -16,7 +16,7 @@ function showPersonal() {
 }
 
 function Signout() {
-    window.location.href = "Track/public";
+    window.location.href = "/Track/public";
 }
 
 

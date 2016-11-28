@@ -22,11 +22,11 @@
     </div>
 
     <div class="navs">
-        <div class="nav" onclick="window.location.href='HomePage'">首页</div>
-        <div class="nav" onclick="window.location.href='Daily'">日迹</div>
-        <div class="nav" onclick="window.location.href='Activity'">赛迹</div>
-        <div class="nav" onclick="window.location.href='History'">足迹</div>
-        <div class="nav" onclick="window.location.href='Social'">人迹</div>
+        <div class="nav" onclick="window.location.href='/Track/public/HomePage/<?php echo $username; ?>/<?php echo $userId; ?>'">首页</div>
+        <div class="nav" onclick="window.location.href='/Track/public/Daily/<?php echo $username; ?>/<?php echo $userId; ?>'">日迹</div>
+        <div class="nav" onclick="window.location.href='/Track/public/Activity/<?php echo $username; ?>/<?php echo $userId; ?>'">赛迹</div>
+        <div class="nav" onclick="window.location.href='/Track/public/History/<?php echo $username; ?>/<?php echo $userId; ?>'">足迹</div>
+        <div class="nav" onclick="window.location.href='/Track/public/Social/<?php echo $username; ?>/<?php echo $userId; ?>'">人迹</div>
     </div>
 
     <div class="personal_div" style="background-color: transparent; width: auto; display: inline">
@@ -45,7 +45,7 @@
 <div id="personalbar" class="personal_bar" style="display: none">
     <div class="menu_person">
         <img src="/Track/public/Image/person.svg" class="person_icon">
-        <span class="person_lbl" onclick="window.location.href='Personal'">个人中心</span>
+        <span class="person_lbl" onclick="window.location.href='/Track/public/Personal/<?php echo $username; ?>/<?php echo $userId; ?>'">个人中心</span>
     </div>
 
     <div class="menu_person" onclick="Signout()">

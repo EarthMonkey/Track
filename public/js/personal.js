@@ -4,7 +4,25 @@
 
 window.onload = function () {
     getHobbies();
+    getUserInfo();
 };
+
+function getUserInfo() {
+    $.ajax({
+        url:'PersonalInfo',
+        type:'get',
+        success: function (result) {
+            var userInfo = document.getElementById("leftinfo").getElementsByTagName('input');
+            // body.getElementsByTagName('span')[0].innerHTML = result.weight;
+            // body.getElementsByTagName('span')[1].innerHTML = result.height;
+            userInfo[0].value = result.username;
+            userInfo[1].value = result.province + " " + result.city + " " + result.location;
+        },
+        error: function () {
+            alert("链接失败");
+        }
+    });
+}
 
 // 更新个人信息
 function updateInfo() {
