@@ -55,7 +55,7 @@
 
 <div class="top_bg"></div>
 
-<div class="launch_activity">
+<div class="launch_activity" onclick="$('#modal').fadeIn(300)">
     发起竞赛
 </div>
 
@@ -182,6 +182,25 @@
 <div class="bottom_nav">
     @Copyright  Sure
 </div>
+
+<div id="modal" class="modal_parent" onclick="cancelModal()">
+
+    <div class="launch_modal">
+
+        <div class="launch_title">发起竞赛
+
+
+
+            <div class="" onclick="$('#modal').fadeOut()">取消</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<a id="storage_id" style="display: none"><?php echo $userId; ?></a>
 
 <script src="/Track/public/js/common.js"></script>
 <script src="/Track/public/js/jquery.js"></script>

@@ -145,6 +145,28 @@
     font-size: 20px;
 }
 
+/* 发起竞赛模态框 */
+.modal_parent {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(44,55,47,.8);
+    box-shadow: 0 0 200px #99a49c inset;
+    display: none;
+}
+
+.launch_modal {
+    width: 360px;
+    height: 300px;
+    border-radius: 2px;
+    background-color: #f3faef;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 120px auto;
+    box-shadow: 0 3px 30px rgba(0, 0, 0, .15);
+}
 
 @media only screen and (max-width: 1100px) {
 

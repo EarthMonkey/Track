@@ -44,7 +44,7 @@
 <div id="personalbar" class="personal_bar" style="display: none">
     <div class="menu_person">
         <img src="/Track/public/Image/person.svg" class="person_icon">
-        <span class="person_lbl" onclick="window.location.href='Personal'">个人中心</span>
+        <span class="person_lbl" onclick="window.location.href='/Track/public/Personal/<?php echo $username; ?>/<?php echo $userId; ?>'">个人中心</span>
     </div>
 
     <div class="menu_person" onclick="Signout()">
@@ -86,6 +86,8 @@
 <div class="bottom_nav">
     @Copyright  Sure
 </div>
+
+<a id="storage_id" style="display: none"><?php echo $userId; ?></a>
 
 <script src="/Track/public/js/common.js"></script>
 <script src="/Track/public/js/jquery.js"></script>

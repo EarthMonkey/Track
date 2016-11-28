@@ -76,3 +76,12 @@ function getMyPartin() {
         parent.appendChild(div);
     }
 }
+
+function cancelModal() {
+    $("#modal").bind('click', function (e) {
+        var elem = e.target || e.srcElement;
+        if (elem.className && elem.className == "modal_parent") {
+            $('#modal').fadeOut();
+        }
+    });
+}
