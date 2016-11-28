@@ -168,6 +168,8 @@
     @Copyright  Sure
 </div>
 
+<a id="storage_id" style="display: none"><?php echo $userId; ?></a>
+
 <script src="/Track/public/js/common.js"></script>
 <script src="/Track/public/js/jquery.js"></script>
 <script src="/Track/public/js/social.js"></script>

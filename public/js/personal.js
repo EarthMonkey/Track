@@ -2,21 +2,27 @@
  * Created by L.H.S on 2016/10/19.
  */
 
+var USERID;
+
 window.onload = function () {
-    getHobbies();
     getUserInfo();
+    getHobbies();
 };
 
 function getUserInfo() {
+    USERID = document.getElementById('storage_id').innerHTML.trim();
     $.ajax({
-        url:'PersonalInfo',
+        url:'/Track/public/PersonalInfo',
         type:'get',
+        data: {'userId': USERID},
         success: function (result) {
+
             var userInfo = document.getElementById("leftinfo").getElementsByTagName('input');
-            // body.getElementsByTagName('span')[0].innerHTML = result.weight;
-            // body.getElementsByTagName('span')[1].innerHTML = result.height;
             userInfo[0].value = result.username;
             userInfo[1].value = result.province + " " + result.city + " " + result.location;
+            userInfo[2].value = result.blog;
+            userInfo[3].value = result.email;
+            userInfo[4].value = result.birthday;
         },
         error: function () {
             alert("链接失败");
@@ -35,7 +41,7 @@ function updateInfo() {
 
         var old = new Array();
 
-        for (var i = 0; i < inputs.length; i++) {
+        for (var i = 1; i < inputs.length; i++) {
             if (i == inputs.length - 1) {
                 inputs[i].disabled = false;
             } else {
@@ -50,7 +56,7 @@ function updateInfo() {
         $(is[1]).fadeIn();
 
         is[0].onclick = function () {
-            for (var i = 0; i < inputs.length; i++) {
+            for (var i = 1; i < inputs.length; i++) {
                 if (i == inputs.length - 1) {
                     inputs[i].disabled = true;
                 } else {
@@ -65,7 +71,7 @@ function updateInfo() {
         };
 
         is[1].onclick = function () {
-            for (var i = 0; i < inputs.length; i++) {
+            for (var i = 1; i < inputs.length; i++) {
                 inputs[i].value = old[i];
                 if (i == inputs.length - 1) {
                     inputs[i].disabled = true;

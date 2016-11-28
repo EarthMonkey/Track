@@ -7,13 +7,23 @@
  */
 
 namespace App\Http\Controllers;
-use App\user_info;
 
-class PersonalController extends Controller {
-    public function getUserInfo()
+use Illuminate\Http\Request;
+use App\user_info;
+use DB;
+
+class PersonalController extends Controller
+{
+
+    public function getUserInfo(Request $request)
     {
-        $userId = 7;
+        $userId = $request->input('userId');
         $userInfo = user_info::where('id', $userId)->get()->first();
         return $userInfo;
+    }
+
+    public function updateUserInfo(Request $request)
+    {
+
     }
 }

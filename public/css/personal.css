@@ -11,6 +11,10 @@
     box-shadow: 0 0 10px #9ea891;
 }
 
+.left_nav_person input::-webkit-input-placeholder {
+    font-size: 11px;
+}
+
 .right_div_person {
     width: 63%;
     background-color: #f3faef;
@@ -29,7 +33,8 @@
     width: 50px;
     height: 50px;
     border-radius: 6px;
-    background-color: #d8d8d8;
+    /*background-color: #d8d8d8;*/
+    background-image: url("../Image/user-img.svg");
     margin: 15px auto;
 }
 

@@ -61,27 +61,27 @@
 
     <div class="p_img"></div>
     <div class="p_username">
-        <input class="p_text" type="text" value="用户名" readonly="true">
+        <input class="p_text" type="text" value="" placeholder="(未填写)" readonly="true">
     </div>
 
     <div class="title_lbl">地区</div>
     <div class="p_username">
-        <input class="p_text" style="font-size: 14px;" type="text" value="江苏省 南京市 鼓楼区" readonly>
+        <input class="p_text" style="font-size: 14px;" type="text" value="" placeholder="(未填写)" readonly>
     </div>
 
     <div class="title_lbl">个人主页</div>
     <div class="p_username">
-        <input class="p_text" style="font-size: 14px;" type="text" value="xxx.xxxxx.xxx" readonly>
+        <input class="p_text" style="font-size: 14px;" type="text" value="" placeholder="(未填写)" readonly>
     </div>
 
     <div class="title_lbl">邮箱</div>
     <div class="p_username">
-        <input class="p_text" style="font-size: 14px;" type="text" value="794637366@qq.com" readonly>
+        <input class="p_text" style="font-size: 14px;" type="text" value="" placeholder="(未填写)" readonly>
     </div>
 
     <div class="title_lbl">生日</div>
     <div class="p_username">
-        <input id="birth" class="p_text" style="font-size: 14px;" type="text" value="1996-12-15" readonly disabled>
+        <input id="birth" class="p_text" style="font-size: 14px;" type="text" value="" placeholder="(未填写)" readonly disabled>
     </div>
 
 
@@ -172,6 +172,8 @@
 <div class="bottom_nav">
     @Copyright  Sure
 </div>
+
+<a id="storage_id" style="display: none"><?php echo $userId; ?></a>
 
 <script src="/Track/public/js/common.js"></script>
 <script src="/Track/public/js/jquery.js"></script>

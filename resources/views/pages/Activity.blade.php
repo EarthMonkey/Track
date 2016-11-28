@@ -183,6 +183,8 @@
     @Copyright Sure
 </div>
 
+<a id="storage_id" style="display: none">{!! $userId !!}</a>
+
 <script src="/Track/public/js/common.js"></script>
 <script src="/Track/public/js/jquery.js"></script>
 <script src="/Track/public/js/activity.js"></script>
