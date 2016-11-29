@@ -49,9 +49,9 @@
     border-radius: 6px;
     box-shadow: 0 4px 4px #477647;
     margin: 30px auto;
-    cursor: pointer;
     font-size: 18px;
     color: #21481E;
+    position: relative;
 }
 
 .each_act:hover {
@@ -70,13 +70,37 @@
     line-height: 40px;
 }
 
+.plus_btn {
+    position: relative;
+    top: 2px;
+    left: 15px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.plus_btn:hover {
+    color: #94E39C;
+}
+
+.plus_btn a {
+    font-size: 14px;
+    position: relative;
+    left: 5px;
+    bottom: 2px;
+    font-weight: 100;
+}
+
 .launcher_img {
     width: 29px;
     height: 29px;
     border-radius: 50%;
-    background-color: #d8d8d8;
     display: inline-block;
     vertical-align: middle;
+    border: 1px solid #fff;
+    text-align: center;
+    font-size: 25px;
+    line-height: 29px;
 }
 
 .act_content {
@@ -152,20 +176,109 @@
     top: 0;
     right: 0;
     bottom: 0;
-    background: rgba(44,55,47,.8);
+    background: rgba(44, 55, 47, .8);
     box-shadow: 0 0 200px #99a49c inset;
     display: none;
 }
 
 .launch_modal {
     width: 360px;
-    height: 300px;
     border-radius: 2px;
     background-color: #f3faef;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin: 120px auto;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    margin: 90px auto;
     box-shadow: 0 3px 30px rgba(0, 0, 0, .15);
+    position: relative;
+}
+
+.launch_title {
+    font-size: 22px;
+    color: #21481e;
+    text-align: center;
+    font-weight: 500;
+}
+
+.publish_btn {
+    width: 100px;
+    height: 40px;
+    background-color: #2d6329;
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+    line-height: 40px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.publish_btn:hover {
+    opacity: 0.7;
+}
+
+.cancel_btn {
+    color: #2d6329;
+    background-color: transparent;
+    border: 2px solid #2d6329;
+}
+
+.cancel_btn:hover {
+    color: #fff;
+    background-color: #2d6329;
+    opacity: 0.7;
+}
+
+.field_tip {
+    color: #2d6329;
+    font-size: 20px;
+    font-weight: 400;
+    width: 100px;
+    display: inline-block;
+}
+
+.launch_title input {
+    width: 175px;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+.launch_title textarea {
+    width: 175px;
+    height: 100px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    resize: none;
+    padding-left: 5px;
+}
+
+.launch_title input:hover,
+.launch_title input:focus,
+.launch_title textarea:hover,
+.launch_title textarea:hover {
+    box-shadow: 0 0 3px #2d6329;
+}
+
+.launch_modal span {
+    color: #ff0000;
+    font-size: 18px;
+    position: absolute;
+    bottom: 6px;
+    left: 120px;
+    font-weight: 300;
+    display: none;
+}
+
+.part_in {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(216,216,216, 0.8);
 }
 
 @media only screen and (max-width: 1100px) {

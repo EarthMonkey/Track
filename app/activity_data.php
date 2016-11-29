@@ -14,6 +14,6 @@ class activity_data extends Model {
 
     protected $table = 'activity_data';
 
-    protected $fillable = ['id', 'name', 'description', 'launcher_id', 'start_time', 'end_time', 'award', 'created_at'];
+    protected $fillable = ['id', 'activity_name', 'description', 'launcher_id', 'start_time', 'end_time', 'award', 'created_at'];
 
 }

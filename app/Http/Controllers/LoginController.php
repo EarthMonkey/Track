@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 
+use App\users;
 use Illuminate\Http\Request;
 use DB;
 
@@ -52,4 +53,12 @@ class LoginController extends Controller
         return $repeats;
     }
 
+    public function getUsername(Request $request) {
+
+        $userId = $request->input('userId');
+        $users = DB::table('users')->select('username')->where('id', $userId)->get();
+
+        return $users;
+
+    }
 }

@@ -7,6 +7,7 @@
     <link href="/Track/public/css/common.css" rel="stylesheet">
     <link href="/Track/public/css/reset.css" rel="stylesheet">
     <link href="/Track/public/css/activity.css" rel="stylesheet">
+    <link href="/Track/public/css/datetimepicker.min.css" rel="stylesheet">
     <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
@@ -21,11 +22,16 @@
     </div>
 
     <div class="navs">
-        <div class="nav" onclick="window.location.href='/Track/public/HomePage/<?php echo $username; ?>/<?php echo $userId; ?>'">首页</div>
+        <div class="nav" onclick="window.location.href='/Track/public/HomePage/<?php echo $username; ?>/<?php echo $userId; ?>'">首页
+        </div>
         <div class="nav" onclick="window.location.href='/Track/public/Daily/<?php echo $username; ?>/<?php echo $userId; ?>'">日迹</div>
-        <div class="nav active" onclick="window.location.href='/Track/public/Activity/<?php echo $username; ?>/<?php echo $userId; ?>'">赛迹</div>
-        <div class="nav" onclick="window.location.href='/Track/public/History/<?php echo $username; ?>/<?php echo $userId; ?>'">足迹</div>
-        <div class="nav" onclick="window.location.href='/Track/public/Social/<?php echo $username; ?>/<?php echo $userId; ?>'">人迹</div>
+        <div class="nav active"
+             onclick="window.location.href='/Track/public/Activity/<?php echo $username; ?>/<?php echo $userId; ?>'">赛迹
+        </div>
+        <div class="nav" onclick="window.location.href='/Track/public/History/<?php echo $username; ?>/<?php echo $userId; ?>'">足迹
+        </div>
+        <div class="nav" onclick="window.location.href='/Track/public/Social/<?php echo $username; ?>/<?php echo $userId; ?>'">人迹
+        </div>
     </div>
 
     <div class="personal_div">
@@ -44,7 +50,8 @@
 <div id="personalbar" class="personal_bar" style="display: none">
     <div class="menu_person">
         <img src="/Track/public/Image/person.svg" class="person_icon">
-        <span class="person_lbl" onclick="window.location.href='/Track/public/Personal/<?php echo $username; ?>/<?php echo $userId; ?>'">个人中心</span>
+        <span class="person_lbl"
+              onclick="window.location.href='/Track/public/Personal/<?php echo $username; ?>/<?php echo $userId; ?>'">个人中心</span>
     </div>
 
     <div class="menu_person" onclick="Signout()">
@@ -59,7 +66,7 @@
     发起竞赛
 </div>
 
-<div class="hide_launch">
+<div class="hide_launch" onclick="$('#modal').fadeIn(300)">
     <i class="fa fa-plus fa-2x"></i>
 </div>
 
@@ -103,10 +110,13 @@
                     开始日期：<span>2016/10/20</span>
                 </div>
 
-                <div class="hide_launcher" style="float: right">
-                    <div class="launcher_img"></div>
+                <i class="fa fa-plus plus_btn"><a>参与竞赛</a></i>
+
+                <div class="hide_launcher" style="float: right; margin-right: 15px;">
+                    <div class="launcher_img">
+                        <i class="fa fa-user" style="color: #fff;"></i>
+                    </div>
                     <span>发起者</span>
-                    &nbsp;
                 </div>
             </div>
 
@@ -120,7 +130,7 @@
                 <span style="font-weight: 600; line-height: 40px;">大作业一份</span>
             </div>
 
-            <div style="width: 120px" class="act_content hide_info">
+            <div style="width: 125px" class="act_content hide_info">
                 倒计时<br>
                 <span style="font-weight: 600; line-height: 40px;">2天10小时33分</span>
             </div>
@@ -131,6 +141,7 @@
                 js是世界上最好的语言
             </span>
             </div>
+
         </div>
 
     </div>
@@ -189,9 +200,47 @@
 
         <div class="launch_title">发起竞赛
 
+            <div style="margin: 15px auto">
+                <div class="field_tip">竞赛名称</div>
+                <div style="display: inline-block;">
+                    <input type="text" placeholder="(必填)">
+                </div>
+            </div>
 
+            <div style="margin: 15px auto">
+                <div class="field_tip">开始时间</div>
+                <div style="display: inline-block; position: relative">
+                    <input id="start_time" type="text" placeholder="(必填)">
+                </div>
+            </div>
 
-            <div class="" onclick="$('#modal').fadeOut()">取消</div>
+            <div style="margin: 15px auto">
+                <div class="field_tip">结束时间</div>
+                <div style="display: inline-block; position: relative;">
+                    <input id="end_time" type="text" placeholder="(必填)">
+                </div>
+            </div>
+
+            <div style="margin: 15px auto">
+                <div class="field_tip" style="vertical-align: top;">竞赛描述</div>
+                <div style="display: inline-block; vertical-align: top;">
+                    <textarea placeholder="(必填)"></textarea>
+                </div>
+            </div>
+
+            <div style="margin: 15px auto">
+                <div class="field_tip">竞赛奖励</div>
+                <div style="display: inline-block;">
+                    <input type="text" placeholder="(可不设奖励)">
+                </div>
+            </div>
+
+            <div style="margin: 20px auto; margin-top: 30px;">
+                <div class="publish_btn" onclick="publish()">发布</div>
+                <div class="publish_btn cancel_btn" onclick="$('#modal').fadeOut()">取消</div>
+            </div>
+
+            <span>请填写完整信息</span>
 
         </div>
 
@@ -205,5 +254,18 @@
 <script src="/Track/public/js/common.js"></script>
 <script src="/Track/public/js/jquery.js"></script>
 <script src="/Track/public/js/activity.js"></script>
+<script src="/Track/public/js/datetimepicker.js"></script>
+<script>
+    $('#start_time').datetimepicker({
+        lang: 'ch',
+        timepicker: true,
+        format: 'Y/m/d H:00:00'
+    });
+    $('#end_time').datetimepicker({
+        lang: 'ch',
+        timepicker: true,
+        format: 'Y/m/d H:00:00'
+    });
+</script>
 </body>
 </html>

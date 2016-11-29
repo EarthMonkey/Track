@@ -24,6 +24,8 @@ Route::get('CheckRepeat', 'LoginController@checkRepeat');
 
 Route::get('Login', 'LoginController@login');
 
+Route::get('GetUsername', 'LoginController@getUsername');
+
 // 首页
 Route::get('/HomePage/{username}/{userId}', function ($username, $userId) {
     return view('pages/HomePage', ['username' => $username, 'userId' => $userId]);
@@ -44,6 +46,10 @@ Route::get('DailyBody', 'DailyController@getBody');
 Route::get('/Activity/{username}/{userId}', function ($username, $userId) {
     return view('pages/Activity', ['username' => $username, 'userId' => $userId]);
 });
+
+Route::post('PublishActivity', 'ActivityController@publish');
+
+Route::post('GetAllActivities', 'ActivityController@getAllActivities');
 
 // 足迹
 Route::get('/History/{username}/{userId}', function ($username, $userId) {
