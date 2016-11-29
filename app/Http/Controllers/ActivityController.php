@@ -29,12 +29,66 @@ class ActivityController extends Controller
             [$activity_name, $description, $launcher_id, $start_time, $end_time, $award]);
     }
 
-    public function getAllActivities() {
+    public function getAllActivities()
+    {
 
         $activities = DB::table('activity_data')->get();
 
         return $activities;
     }
 
-    
+    public function getMyPartin(Request $request)
+    {
+
+        $partin_id = $request->input('userId');
+        $act_ids = DB::table('activity_user')->select('id')->where('partin_id', $partin_id)->get();
+
+        $activities = array();
+        for ($i = 0; $i < count($act_ids); $i++) {
+            $activities[$i] = DB::table('activity_data')->where('id', $act_ids[$i]->id)->get();
+        }
+
+        return $activities;
+    }
+
+    public function getMyLaunch(Request $request)
+    {
+
+        $launcher_id = $request->input('userId');
+        $activities = DB::table('activity_data')->where('launcher_id', $launcher_id)->get();
+
+        return $activities;
+    }
+
+    public function partIn(Request $request)
+    {
+
+        $act_id = $request->input('act_id');
+        $partin_id = $request->input('userId');
+        $launcher_id = $request->input('launcher_id');
+        $created_at = date('Y-m-d', time());
+
+        DB::insert('insert into activity_user(id, partin_id, launcher_id, created_at) values(?,?,?,?)',
+            [$act_id, $partin_id, $launcher_id, $created_at]);
+
+    }
+
+    public function partInAlready(Request $request)
+    {
+
+        $act_id = $request->input('act_id');
+        $partin_id = $request->input('userId');
+        $alreadyin = DB::table('activity_user')->where('id', $act_id)->where('partin_id', $partin_id)->count();
+
+        return $alreadyin;
+    }
+
+    public function getParters(Request $request)
+    {
+
+        $act_id = $request->input('act_id');
+        $parters = DB::table('activity_user')->where('id', $act_id)->count();
+
+        return $parters;
+    }
 }

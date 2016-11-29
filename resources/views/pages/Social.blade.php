@@ -7,6 +7,7 @@
     <link href="/Track/public/css/common.css" rel="stylesheet">
     <link href="/Track/public/css/reset.css" rel="stylesheet">
     <link href="/Track/public/css/social.css" rel="stylesheet">
+    <link href="/Track/public/css/activity.css" rel="stylesheet">
     <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
@@ -21,11 +22,16 @@
     </div>
 
     <div class="navs">
-        <div class="nav" onclick="window.location.href='/Track/public/HomePage/{!! $username !!}/{!! $userId !!}'">首页</div>
+        <div class="nav" onclick="window.location.href='/Track/public/HomePage/{!! $username !!}/{!! $userId !!}'">首页
+        </div>
         <div class="nav" onclick="window.location.href='/Track/public/Daily/{!! $username !!}/{!! $userId !!}'">日迹</div>
-        <div class="nav" onclick="window.location.href='/Track/public/Activity/{!! $username !!}/{!! $userId !!}'">赛迹</div>
-        <div class="nav" onclick="window.location.href='/Track/public/History/{!! $username !!}/{!! $userId !!}'">足迹</div>
-        <div class="nav active" onclick="window.location.href='/Track/public/Social/{!! $username !!}/{!! $userId !!}'">人迹</div>
+        <div class="nav" onclick="window.location.href='/Track/public/Activity/{!! $username !!}/{!! $userId !!}'">赛迹
+        </div>
+        <div class="nav" onclick="window.location.href='/Track/public/History/{!! $username !!}/{!! $userId !!}'">足迹
+        </div>
+        <div class="nav active" onclick="window.location.href='/Track/public/Social/{!! $username !!}/{!! $userId !!}'">
+            人迹
+        </div>
     </div>
 
     <div class="personal_div">
@@ -44,7 +50,8 @@
 <div id="personalbar" class="personal_bar" style="display: none">
     <div class="menu_person">
         <img src="/Track/public/Image/person.svg" class="person_icon">
-        <span class="person_lbl" onclick="window.location.href='/Track/public/Personal/{!! $username !!}/{!! $userId !!}'">个人中心</span>
+        <span class="person_lbl"
+              onclick="window.location.href='/Track/public/Personal/{!! $username !!}/{!! $userId !!}'">个人中心</span>
     </div>
 
     <div class="menu_person" onclick="Signout()">
@@ -55,8 +62,17 @@
 
 <div class="top_bg"></div>
 
+
+<div class="launch_activity" onclick="$('#modal').fadeIn(300)">
+    发布动态
+</div>
+
+<div class="hide_launch" onclick="$('#modal').fadeIn(300)">
+    <i class="fa fa-plus fa-2x"></i>
+</div>
+
 <!-- 左侧导航栏 -->
-<div class="left_nav">
+<div class="left_nav" style="top: 280px;">
 
     <div class="sub_nav sub-active" onclick="changeTab(0)">
         好友动态
@@ -135,7 +151,7 @@
         </div>
 
 
-        <div class="detail_hide"v>
+        <div class="detail_hide" v>
             <div class="title_lbl">邮箱</div>
             <div class="p_username">
                 <input class="p_text" style="font-size: 14px;" type="text" value="794637366@qq.com" readonly>
@@ -166,6 +182,57 @@
 
 <div class="bottom_nav">
     @Copyright Sure
+</div>
+
+<div id="modal" class="modal_parent" onclick="cancelModal()">
+
+    <div class="launch_modal" style="width: 490px;">
+
+        <div class="launch_title">发起竞赛
+
+            <div style="margin: 15px auto">
+                <div class="field_tip">竞赛名称</div>
+                <div style="display: inline-block;">
+                    <input type="text" placeholder="(必填)">
+                </div>
+            </div>
+
+            <div style="margin: 15px auto">
+                <div class="field_tip">开始时间</div>
+                <div style="display: inline-block; position: relative">
+                    <input id="start_time" type="text" placeholder="(必填)">
+                </div>
+            </div>
+
+            <div style="margin: 15px auto">
+                <div class="field_tip">结束时间</div>
+                <div style="display: inline-block; position: relative;">
+                    <input id="end_time" type="text" placeholder="(必填)">
+                </div>
+            </div>
+
+            <div style="margin: 15px auto">
+                <div class="field_tip" style="vertical-align: top;">竞赛描述</div>
+                <div style="display: inline-block; vertical-align: top;">
+                    <textarea placeholder="(必填)"></textarea>
+                </div>
+            </div>
+
+            <div style="margin: 15px auto">
+                <div class="field_tip">竞赛奖励</div>
+                <div style="display: inline-block;">
+                    <input type="text" placeholder="(可不设奖励)">
+                </div>
+            </div>
+
+            <div style="margin: 20px auto; margin-top: 30px;">
+                <div class="publish_btn" onclick="publish()">发布</div>
+                <div class="publish_btn cancel_btn" onclick="$('#modal').fadeOut()">取消</div>
+            </div>
+
+            <span>请填写完整信息</span>
+        </div>
+    </div>
 </div>
 
 <a id="storage_id" style="display: none">{!! $userId !!}</a>

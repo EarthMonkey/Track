@@ -1,7 +1,7 @@
 /**
  * Created by L.H.S on 2016/10/18.
  */
-var USERID
+var USERID = document.getElementById("storage_id").innerHTML.trim();
 
 window.onload = function () {
     getSportData();
@@ -10,7 +10,6 @@ window.onload = function () {
 };
 
 function getSportData() {
-    USERID = document.getElementById("storage_id").innerHTML.trim();
     $.ajax({
         url: '/Track/public/DailySport',
         type: 'get',
@@ -24,9 +23,9 @@ function getSportData() {
         error: function () {
             alert("链接失败");
         }
-
-
     });
+
+    getBarChart('stepchart');
 }
 
 function changeTab(index) {

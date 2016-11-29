@@ -180,7 +180,7 @@
     <!-- 我参与的 -->
     <div style="margin-top: 40px; color: #30312f;">
 
-        <div class="lead_text">我发起的竞赛
+        <div class="lead_text">我参与的竞赛
             <i class="fa fa-sort-down" onclick="$('#mypartin').slideToggle('slow');"></i>
         </div>
 
@@ -197,6 +197,8 @@
 <div id="modal" class="modal_parent" onclick="cancelModal()">
 
     <div class="launch_modal">
+
+        <div>
 
         <div class="launch_title">发起竞赛
 
@@ -242,10 +244,9 @@
 
             <span>请填写完整信息</span>
 
+            <div class="left_deco"></div>
         </div>
-
     </div>
-
 </div>
 
 

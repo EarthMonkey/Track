@@ -17,16 +17,40 @@ function getAllActs() {
     $.ajax({
         url: '/Track/public/GetAllActivities',
         type: 'post',
+        async: false,
         success: function (result) {
             if (result.length > 0) {
                 for (var i = 0; i < result.length; i++) {
                     var div = document.createElement("div");
                     div.innerHTML = copy.innerHTML;
 
-                    var partin = div.getElementsByClassName('plus_btn')[0];
-                    partin.onclick = function () {
-                        partIn(this);
-                    };
+                    var alreadyIn = 0;
+                    $.ajax({
+                        url: '/Track/public/AlreadyIn',
+                        type: 'get',
+                        async: false,
+                        data: {
+                            'userId': USERID,
+                            'act_id': result[i].id
+                        },
+                        success: function (result) {
+                            alreadyIn = result;
+                        },
+                        error: function () {
+                            alert("查重失败")
+                        }
+                    });
+
+                    if (alreadyIn > 0) {
+                        var partin = div.getElementsByClassName('plus_btn')[0];
+                        partin.getElementsByTagName('a')[0].innerHTML = "已参与";
+                        partin.className = 'fa fa-check check_btn';
+                    } else {
+                        var partin = div.getElementsByClassName('plus_btn')[0];
+                        partin.onclick = function () {
+                            partIn(this);
+                        };
+                    }
 
                     var spans = div.getElementsByTagName("span");
                     spans[0].innerHTML = result[i].activity_name;
@@ -54,7 +78,22 @@ function getAllActs() {
                         }
                     });
 
-                    spans[3].innerHTML = 0;  // 参与人数
+                    // 参与人数
+
+                    $.ajax({
+                        url: '/Track/public/GetParters',
+                        type: 'get',
+                        async: false,
+                        data: {
+                            'act_id': result[i].id
+                        },
+                        success: function (result) {
+                            spans[3].innerHTML = result;
+                        },
+                        error: function () {
+                            alert('获取参与人数失败');
+                        }
+                    });
 
                     spans[4].innerHTML = result[i].award;
 
@@ -88,7 +127,21 @@ function partIn(parent) {
     var act_id = as[1].innerHTML;
     var launcher_id = as[2].innerHTML;
 
-
+    $.ajax({
+        url: '/Track/public/PartInActivity',
+        type: 'post',
+        data: {
+            'userId': USERID,
+            'act_id': act_id,
+            'launcher_id': launcher_id
+        },
+        success: function () {
+            window.location.reload();
+        },
+        error: function () {
+            alert("参与失败")
+        }
+    });
 
 }
 
@@ -122,28 +175,102 @@ function hidePic(node) {
 
 function getMyLaunch() {
 
-    var parent = document.getElementById("mylaunch");
-    var copy = document.getElementById("act_copy");
-    copy.getElementsByClassName("each_act")[0].style.width = "95%";
-
-    for (var i = 0; i < 3; i++) {
-        var div = document.createElement("div");
-        div.innerHTML = copy.innerHTML;
-
-        parent.appendChild(div);
-    }
+    $.ajax({
+        url: '/Track/public/GetMyLaunch',
+        type: 'post',
+        async: false,
+        data: {
+            'userId': USERID
+        },
+        success: function (result) {
+            setAct('mylaunch', result);
+        },
+        error: function () {
+            alert("获取我发起的活动失败");
+        }
+    });
 }
 
 function getMyPartin() {
 
-    var parent = document.getElementById("mypartin");
+    $.ajax({
+        url: '/Track/public/GetMyPartin',
+        type: 'post',
+        async: false,
+        data: {
+            'userId': USERID
+        },
+        success: function (result) {
+            for(var i=0; i<result.length; i++) {
+                setAct('mypartin', result[i]);
+            }
+        },
+        error: function () {
+            alert("获取我参与的活动失败");
+        }
+    });
+}
+
+function setAct(parentId, result) {
+
+    var parent = document.getElementById(parentId);
     var copy = document.getElementById("act_copy");
     copy.getElementsByClassName("each_act")[0].style.width = "95%";
 
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < result.length; i++) {
         var div = document.createElement("div");
         div.innerHTML = copy.innerHTML;
 
+        div.getElementsByClassName('plus_btn')[0].style.display = 'none';
+
+        var spans = div.getElementsByTagName("span");
+        spans[0].innerHTML = result[i].activity_name;
+        spans[1].innerHTML = (result[i].start_time.split(" "))[0];
+
+        $.ajax({
+            url: '/Track/public/GetUsername',
+            type: 'get',
+            async: false,
+            data: {'userId': result[i].launcher_id},
+            success: function (result) {
+                spans[2].innerHTML = result[0].username;
+            },
+            error: function () {
+                alert("获取用户名失败");
+            }
+        });
+
+        // 参与人数
+        $.ajax({
+            url: '/Track/public/GetParters',
+            type: 'get',
+            async: false,
+            data: {
+                'act_id': result[i].id
+            },
+            success: function (result) {
+                spans[3].innerHTML = result;
+            },
+            error: function () {
+                alert('获取参与人数失败');
+            }
+        });
+
+        spans[4].innerHTML = result[i].award;
+
+        // 倒计时
+        var now = new Date();
+        var begin_time = result[i].start_time;
+        var start = Date.parse(begin_time);
+        var minus_time = start - now.getTime();
+
+        var days = Math.floor(minus_time / (24 * 3600 * 1000));
+        var day_hours = minus_time % (24 * 3600 * 1000);
+        var hours = Math.floor(day_hours / (3600 * 1000));
+        var mins = Math.floor(day_hours % (3600 * 1000) / (60 * 1000));
+
+        spans[5].innerHTML = days + "天" + hours + "h" + mins + "min";   // 倒计时
+        spans[6].innerHTML = result[i].description;
         parent.appendChild(div);
     }
 }

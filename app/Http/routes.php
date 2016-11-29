@@ -50,6 +50,14 @@ Route::get('/Activity/{username}/{userId}', function ($username, $userId) {
 Route::post('PublishActivity', 'ActivityController@publish');
 
 Route::post('GetAllActivities', 'ActivityController@getAllActivities');
+Route::post('GetMyLaunch', 'ActivityController@getMyLaunch');
+Route::post('GetMyPartin', 'ActivityController@getMyPartin');
+
+Route::get('GetParters', 'ActivityController@getParters');
+
+Route::post('PartInActivity', 'ActivityController@partIn');
+
+Route::get('AlreadyIn', 'ActivityController@partInAlready');
 
 // 足迹
 Route::get('/History/{username}/{userId}', function ($username, $userId) {

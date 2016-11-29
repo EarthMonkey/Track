@@ -121,7 +121,7 @@
             <img src="/Track/public/Image/pic_run.png" style="left: 45px;" class="pic_img">
             <div class="pic_text">
                 绕环形跑道<br>
-                <span style="font-size: 26px">0</span>
+                <span style="font-size: 26px">15</span>
                 <span style="font-size: 16px;">圈</span>
             </div>
 
@@ -132,7 +132,7 @@
             <img src="/Track/public/Image/pic_meat.png" class="pic_img">
             <div class="pic_text">
                 消耗肥肉<br>
-                <span style="font-size: 26px">0</span>
+                <span style="font-size: 26px">1.5</span>
                 <span style="font-size: 16px;">公斤</span>
             </div>
 
@@ -143,7 +143,7 @@
             <img src="/Track/public/Image/pic_fuel.png" class="pic_img">
             <div class="pic_text">
                 省下93#汽油<br>
-                <span style="font-size: 26px">0</span>
+                <span style="font-size: 26px">2.0</span>
                 <span style="font-size: 16px;">升</span>
             </div>
 
@@ -154,7 +154,7 @@
             <img src="/Track/public/Image/pic_light.png" class="pic_img">
             <div class="pic_text">
                 60W灯泡亮<br>
-                <span style="font-size: 26px">0</span>
+                <span style="font-size: 26px">10</span>
                 <span style="font-size: 16px;">小时</span>
             </div>
 
@@ -162,7 +162,7 @@
     </div>
 
     <div class="lead_text hide_text" style="margin-top: 50px;">您的运动曲线图</div>
-    <div class="chart_div"></div>
+    <div id="stepchart" class="chart_div"></div>
 
 </div>
 

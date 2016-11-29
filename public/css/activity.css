@@ -79,11 +79,20 @@
     transition: 0.3s;
 }
 
+.check_btn {
+    position: relative;
+    top: 2px;
+    left: 15px;
+    color: #fff;
+    cursor: default;
+}
+
 .plus_btn:hover {
     color: #94E39C;
 }
 
-.plus_btn a {
+.plus_btn a,
+.check_btn a {
     font-size: 14px;
     position: relative;
     left: 5px;
@@ -182,7 +191,7 @@
 }
 
 .launch_modal {
-    width: 360px;
+    width: 410px;
     border-radius: 2px;
     background-color: #f3faef;
     padding-top: 30px;
@@ -278,7 +287,18 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background: rgba(216,216,216, 0.8);
+    background: rgba(216, 216, 216, 0.8);
+}
+
+.left_deco {
+    position: absolute;
+    left: -45px;
+    top: 0;
+    bottom: 0;
+    width: 45px;
+    background-color: #2d6329;
+    border-radius: 2px;
+    box-shadow: -1.5px 0 1px #fff;
 }
 
 @media only screen and (max-width: 1100px) {
