@@ -104,7 +104,7 @@
                 <div class="dy_user"></div>
                 <div class="dy_user_div">
                     <span class="userId_div">用户名</span><br>
-                    <span>10-18 来自iPhone7</span>
+                    <span>10-18</span>&nbsp;来自iPhone6s
                 </div>
             </div>
 
@@ -186,53 +186,27 @@
 
 <div id="modal" class="modal_parent" onclick="cancelModal()">
 
-    <div class="launch_modal" style="width: 490px;">
+    <div class="launch_modal" style="width: 490px; position: relative; margin-top: 180px;">
 
-        <div class="launch_title">发起竞赛
+        <div class="top_deco"></div>
 
-            <div style="margin: 15px auto">
-                <div class="field_tip">竞赛名称</div>
-                <div style="display: inline-block;">
-                    <input type="text" placeholder="(必填)">
-                </div>
-            </div>
-
-            <div style="margin: 15px auto">
-                <div class="field_tip">开始时间</div>
-                <div style="display: inline-block; position: relative">
-                    <input id="start_time" type="text" placeholder="(必填)">
-                </div>
-            </div>
-
-            <div style="margin: 15px auto">
-                <div class="field_tip">结束时间</div>
-                <div style="display: inline-block; position: relative;">
-                    <input id="end_time" type="text" placeholder="(必填)">
-                </div>
-            </div>
-
-            <div style="margin: 15px auto">
-                <div class="field_tip" style="vertical-align: top;">竞赛描述</div>
-                <div style="display: inline-block; vertical-align: top;">
-                    <textarea placeholder="(必填)"></textarea>
-                </div>
-            </div>
-
-            <div style="margin: 15px auto">
-                <div class="field_tip">竞赛奖励</div>
-                <div style="display: inline-block;">
-                    <input type="text" placeholder="(可不设奖励)">
-                </div>
-            </div>
-
-            <div style="margin: 20px auto; margin-top: 30px;">
-                <div class="publish_btn" onclick="publish()">发布</div>
-                <div class="publish_btn cancel_btn" onclick="$('#modal').fadeOut()">取消</div>
-            </div>
-
-            <span>请填写完整信息</span>
+        <div style="margin: 0 auto">
+            <textarea class="share_area" placeholder="说点什么……"></textarea>
         </div>
+
+        <div class="pub_pic">
+            <div class="cross_h"></div>
+            <div class="cross_v"></div>
+        </div>
+
+        <div style="margin-left: 130px; margin-top: 20px;">
+            <div class="publish_btn" onclick="publish()">发布</div>
+            <div class="publish_btn cancel_btn" onclick="$('#modal').fadeOut()">取消</div>
+        </div>
+
+        <span style="bottom: 60px; left: 188px;">说点什么吧</span>
     </div>
+</div>
 </div>
 
 <a id="storage_id" style="display: none"><?php echo $userId; ?></a>

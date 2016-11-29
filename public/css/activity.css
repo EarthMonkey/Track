@@ -219,6 +219,7 @@
     display: inline-block;
     cursor: pointer;
     transition: 0.3s;
+    vertical-align: top;
 }
 
 .publish_btn:hover {
@@ -226,6 +227,7 @@
 }
 
 .cancel_btn {
+    height: 36px;
     color: #2d6329;
     background-color: transparent;
     border: 2px solid #2d6329;
@@ -267,7 +269,7 @@
 .launch_title input:hover,
 .launch_title input:focus,
 .launch_title textarea:hover,
-.launch_title textarea:hover {
+.launch_title textarea:focus {
     box-shadow: 0 0 3px #2d6329;
 }
 

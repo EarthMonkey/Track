@@ -14,6 +14,6 @@ class social_share extends Model {
 
     protected $table = 'social_share';
 
-    protected $fillable = ['id', 'user_id', 'content'];
+    protected $fillable = ['id', 'user_id', 'content', 'created_at'];
 
 }

@@ -76,6 +76,9 @@ Route::get('/Social/{username}/{userId}', function ($username, $userId) {
     return view('pages/Social', ['username' => $username, 'userId' => $userId]);
 });
 
+Route::post('Share', 'SocialController@publishShare');
+Route::post('GetShare', 'SocialController@getShares');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
