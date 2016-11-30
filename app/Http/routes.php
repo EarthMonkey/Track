@@ -77,19 +77,10 @@ Route::get('/Social/{username}/{userId}', function ($username, $userId) {
 });
 
 Route::post('Share', 'SocialController@publishShare');
+
 Route::post('GetShare', 'SocialController@getShares');
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
-|
-*/
+Route::post('ThumbUp', 'SocialController@thumbUp');
+Route::get('GetThumbs', 'SocialController@getThumbs');
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
+Route::get('AlreadyThumb', 'SocialController@alreadyThumbUp');

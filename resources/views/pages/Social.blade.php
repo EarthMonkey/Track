@@ -129,6 +129,16 @@
 
 <div id="myconcern" class="right_div" style="display: none;">
 
+    <div class="search_div">
+
+        <div style="display: inline-block; vertical-align: top;">
+            <input type="text" placeholder="请输入用户昵称搜索">
+        </div>
+
+        <div class="search_btn">
+            <i class="fa fa-search"></i>
+        </div>
+    </div>
 
     <div id="fan_info_copy" class="each_fan" style="display: none;">
         <div class="p_img"></div>

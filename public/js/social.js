@@ -51,9 +51,84 @@ function setShares(parentID, result) {
             }
         });
 
+        var dy_zan = div.getElementsByClassName('dy_zan');
+        var thumbs = dy_zan[1].getElementsByTagName('span')[0];
+
+        var a = document.createElement('a');
+        a.style.display = 'none';
+        a.innerHTML = result[i].id;
+        dy_zan[1].appendChild(a);
+
+        $.ajax({
+            url: '/Track/public/GetThumbs',
+            type: 'get',
+            async: false,
+            data: {
+                'sh_id': result[i].id
+            },
+            success: function (result) {
+                thumbs.innerHTML = result;
+            },
+            error: function () {
+                alert('获取点赞数失败');
+            }
+        });
+
+        // 是否已点赞
+        $.ajax({
+            url: '/Track/public/AlreadyThumb',
+            type: 'get',
+            async: false,
+            data: {
+                'userId': USERID,
+                'sh_id': result[i].id
+            },
+            success: function (result) {
+                if (result > 0) {
+                    dy_zan[1].style.color = '#43c138';
+                }
+            },
+            error: function () {
+                alert('获取点赞数失败');
+            }
+        });
+
+        dy_zan[1].onclick = function () {
+            thumbUp(this);
+        };
+
         spans[1].innerHTML = result[i].created_at;
         parent.appendChild(div);
     }
+}
+
+function thumbUp(node) {
+
+    var sh_id = node.getElementsByTagName('a')[0].innerHTML;
+    var thumbs = node.getElementsByTagName('span')[0];
+
+    $.ajax({
+        url: '/Track/public/ThumbUp',
+        type: 'post',
+        async: false,
+        data: {
+            'sh_id': sh_id,
+            'userId': USERID
+        },
+        success: function (result) {
+            if (result > 0) {
+                thumbs.innerHTML++;
+                node.style.color = '#43c138';
+            } else {
+                thumbs.innerHTML--;
+                node.style.color = '#2a9321';
+            }
+        },
+        error: function () {
+            alert('点赞失败');
+        }
+    });
+
 }
 
 function changeTab(index) {
