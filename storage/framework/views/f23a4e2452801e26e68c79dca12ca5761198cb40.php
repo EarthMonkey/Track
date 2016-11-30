@@ -60,13 +60,13 @@
     <div class="lead_text">这些都是您留下来的痕迹</div>
     <div class="sum_pic_div">
         <img src="/Track/public/Image/his-km.png" style="z-index: 100;">
-        <div style="position: absolute; left: 50px; top: 46px;">0</div>
+        <div style="position: absolute; left: 50px; top: 46px;">4.0</div>
 
         <img src="/Track/public/Image/his-day.png" class="mid_img" style="z-index: 100;">
-        <div style="" class="hide_img_2">0</div>
+        <div class="hide_img_2">2</div>
 
         <img src="/Track/public/Image/his-cal.png" style="z-index: 100;">
-        <div style="" class="hide_img_3">0</div>
+        <div class="hide_img_3">3000</div>
     </div>
 
     <div class="gradual_bg"></div>
@@ -75,10 +75,10 @@
     <div id="eachday" class="chart_weight"></div>
 
     <div class="lead_text" style="margin-top: 40px;">这是您这些年来的体重变化</div>
-    <div class="chart_weight"></div>
+    <div id="weightchange" class="chart_weight"></div>
 
     <div class="lead_text" style="margin-top: 40px;">还有您每个有我陪伴的夜晚</div>
-    <div class="chart_weight"></div>
+    <div id="eachnight" class="chart_weight"></div>
 
 </div>
 

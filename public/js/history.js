@@ -5,4 +5,7 @@
 window.onload = function () {
     $("#eachday").css('width', $("#eachday").width());
     getBarChart("eachday");
+
+    getBarChart("weightchange");
+    getBarChart('eachnight');
 };

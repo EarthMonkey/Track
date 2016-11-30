@@ -97,6 +97,7 @@ function Register() {
             $.ajax({
                 url: 'CheckRepeat',
                 type: 'get',
+                async: false,
                 data: {
                     'username': inputs[0]
                 },
@@ -108,7 +109,23 @@ function Register() {
                             lbl.remove();
                         };
                     } else {
-                        window.location.href = 'Register/' + inputs[0] + '/' + inputs[1];
+
+                        $.ajax({
+                            url: 'Register',
+                            type: 'get',
+                            async: false,
+                            data: {
+                                'username': inputs[0],
+                                'password': inputs[1]
+                            },
+                            success: function (reId) {
+                                alert(reId)
+                                window.location.href = 'HomePage/' + inputs[0] + '/' + reId;
+                            },
+                            error: function () {
+                                alert('跳转失败');
+                            }
+                        });
                     }
                 },
                 error: function () {

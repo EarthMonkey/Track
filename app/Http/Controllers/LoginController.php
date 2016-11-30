@@ -8,7 +8,6 @@
 
 namespace App\Http\Controllers;
 
-use App\users;
 use Illuminate\Http\Request;
 use DB;
 
@@ -32,15 +31,27 @@ class LoginController extends Controller
     }
 
 
-    public function Register(Request $request, $username, $password)
+    public function register(Request $request)
     {
+
+        $username = $request->input('username');
+        $password = $request->input('password');
 
         $created_at = date('Y-m-d', time());
         DB::insert('insert into users(username, password, power, created_at, updated_at) values(?,?,?,?,?)',
             [$username, $password, "普通会员", $created_at, $created_at]);
 
-        $userId = DB::table('users')->select('id')->where('username', $username)->get();
-        return view('pages.HomePage', ['username' => $username, 'userId' => $userId]);
+        $userId = DB::table('users')->insertGetId([
+            'username' => $username,
+            'password' => $password,
+            'power' => '普通会员',
+            'created_at' => $created_at,
+            'updated_at' => $created_at
+        ]);
+
+        DB::insert('insert into user_info(id, username) values(?,?)', [$userId, $username]);
+
+        return $userId;
     }
 
 
@@ -53,7 +64,8 @@ class LoginController extends Controller
         return $repeats;
     }
 
-    public function getUsername(Request $request) {
+    public function getUsername(Request $request)
+    {
 
         $userId = $request->input('userId');
         $users = DB::table('users')->select('username')->where('id', $userId)->get();

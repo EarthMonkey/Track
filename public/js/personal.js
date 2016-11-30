@@ -68,6 +68,31 @@ function updateInfo() {
 
             $(is[0]).hide();
             $(is[1]).hide();
+
+            var locates = inputs[1].value.split(' ');
+
+            $.ajax({
+                url: '/Track/public/UpdateInfo',
+                type: 'post',
+                async: false,
+                data: {
+                    'userId': USERID,
+                    'username': inputs[0].value,
+                    'province': locates[0],
+                    'city': locates[1],
+                    'location': locates[2],
+                    'blog': inputs[2].value,
+                    'email': inputs[3].value,
+                    'birthday': inputs[4].value
+                },
+                success: function () {
+
+                },
+                error: function () {
+                    alert('更新失败');
+                }
+            });
+
         };
 
         is[1].onclick = function () {

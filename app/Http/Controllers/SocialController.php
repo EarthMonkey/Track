@@ -74,4 +74,54 @@ class SocialController extends Controller
 
         return $alreadyIn;
     }
+
+    public function searchUsers(Request $request) {
+
+        $key = $request->input('key');
+        $users = DB::table('user_info')->where('username', 'like', '%'.$key.'%')->get();
+
+        return $users;
+    }
+
+    public function addConcern(Request $request) {
+
+        $user_id = $request->input('user_id');
+        $concern_id = $request->input('concern_id');
+
+        DB::insert('insert into social_fans(id, fans_id) values(?,?)', [$concern_id, $user_id]);
+
+    }
+
+    public function getConcern(Request $request) {
+        $user_id = $request->input('user_id');
+        $ids = DB::table('social_fans')->where('fans_id', $user_id)->get();
+
+        $concerns = array();
+        for ($i = 0; $i < count($ids); $i++) {
+            $concerns[$i] = DB::table('user_info')->where('id', $ids[$i]->id)->get();
+        }
+
+        return $concerns;
+    }
+
+    public function getFans(Request $request) {
+        $user_id = $request->input('user_id');
+        $ids = DB::table('social_fans')->where('id', $user_id)->get();
+
+        $fans = array();
+        for ($i = 0; $i < count($ids); $i++) {
+            $fans[$i] = DB::table('user_info')->where('id', $ids[$i]->fans_id)->get();
+        }
+
+        return $fans;
+    }
+
+    public function alreadyConcern(Request $request) {
+        $user_id = $request->input('user_id');
+        $concern_id = $request->input('concern_id');
+
+        $isIn = DB::table('social_fans')->where('id', $concern_id)->where('fans_id', $user_id)->count();
+
+        return $isIn;
+    }
 }

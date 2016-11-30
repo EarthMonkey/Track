@@ -85,7 +85,7 @@ function setShares(parentID, result) {
             },
             success: function (result) {
                 if (result > 0) {
-                    dy_zan[1].style.color = '#43c138';
+                    dy_zan[1].style.color = '#44d338';
                 }
             },
             error: function () {
@@ -118,7 +118,7 @@ function thumbUp(node) {
         success: function (result) {
             if (result > 0) {
                 thumbs.innerHTML++;
-                node.style.color = '#43c138';
+                node.style.color = '#44d338';
             } else {
                 thumbs.innerHTML--;
                 node.style.color = '#2a9321';
@@ -150,59 +150,41 @@ function changeTab(index) {
 }
 
 function getMyConcerns() {
-
-    var parent = document.getElementById("myconcern");
-    var copy = document.getElementById("fan_info_copy");
-
-    for (var i = 0; i < 5; i++) {
-        var div = document.createElement("div");
-        div.className = "each_fan";
-
-        div.onmouseenter = function () {
-            var details = this.getElementsByClassName("detail_hide");
-            for (var j = 0; j < details.length; j++) {
-                $(details[j]).slideDown();
+    $.ajax({
+        url: '/Track/public/GetConcern',
+        type: 'post',
+        async: false,
+        data: {
+            'user_id': USERID
+        },
+        success: function (result) {
+            for (var i = 0; i < result.length; i++) {
+                setUsers("concerns", result[i]);
             }
-        };
-
-        div.onmouseleave = function () {
-            var details = this.getElementsByClassName("detail_hide");
-            for (var j = 0; j < details.length; j++) {
-                $(details[j]).slideUp();
-            }
-        };
-
-        div.innerHTML = copy.innerHTML;
-        parent.appendChild(div);
-    }
+        },
+        error: function () {
+            alert('获取关注信息失败');
+        }
+    });
 }
 
 function getMyFans() {
-
-    var parent = document.getElementById("myfans");
-    var copy = document.getElementById("fan_info_copy");
-
-    for (var i = 0; i < 5; i++) {
-        var div = document.createElement("div");
-        div.className = "each_fan";
-
-        div.onmouseenter = function () {
-            var details = this.getElementsByClassName("detail_hide");
-            for (var j = 0; j < details.length; j++) {
-                $(details[j]).slideDown();
+    $.ajax({
+        url: '/Track/public/GetFans',
+        type: 'post',
+        async: false,
+        data: {
+            'user_id': USERID
+        },
+        success: function (result) {
+            for (var i = 0; i < result.length; i++) {
+                setUsers("myfans", result[i]);
             }
-        };
-
-        div.onmouseleave = function () {
-            var details = this.getElementsByClassName("detail_hide");
-            for (var j = 0; j < details.length; j++) {
-                $(details[j]).slideUp();
-            }
-        };
-
-        div.innerHTML = copy.innerHTML;
-        parent.appendChild(div);
-    }
+        },
+        error: function () {
+            alert('获取粉丝信息失败');
+        }
+    });
 }
 
 function cancelModal() {
@@ -241,7 +223,115 @@ function publish() {
                 alert('发布失败');
             }
         });
-
     }
+}
+
+function search() {
+
+    var input = document.getElementsByClassName('search_div')[0].getElementsByTagName('input').value;
+
+    if (input == '') {
+        return;
+    }
+
+    $.ajax({
+        url: '/Track/public/Search',
+        type: 'post',
+        async: false,
+        data: {
+            'key': input
+        },
+        success: function (result) {
+            $('#concerns').hide();
+            $('#searchs').show();
+            setUsers('searchs', result);
+        },
+        error: function () {
+            alert("搜索失败");
+        }
+    });
+}
+
+function setUsers(parentId, result) {
+
+    var parent = document.getElementById(parentId);
+    var copy = document.getElementById("fan_info_copy");
+
+    for (var i = 0; i < result.length; i++) {
+        var div = document.createElement("div");
+        div.className = "each_fan";
+
+        div.onclick = function () {
+            var details = this.getElementsByClassName("detail_hide");
+            for (var j = 0; j < details.length; j++) {
+                $(details[j]).slideToggle();
+            }
+        };
+
+        div.innerHTML = copy.innerHTML;
+
+        var addbtn = div.getElementsByClassName('add_btn')[0];
+
+        var alreadyin = 0;
+        $.ajax({
+            url: '/Track/public/AlreadyConcern',
+            type: 'get',
+            async: false,
+            data: {
+                'user_id': USERID,
+                'concern_id': result[i].id
+            },
+            success: function (result) {
+                alreadyin = result;
+            },
+            error: function () {
+                alert('获取关注信息失败');
+            }
+        });
+
+        if(alreadyin > 0) {
+            addbtn.style.display = 'none';
+        } else {
+            var a = document.createElement('a');
+            a.style.display = 'none';
+            a.innerHTML = result[i].id;
+            addbtn.appendChild(a);
+
+            addbtn.onclick = function () {
+                addConcern(this);
+            };
+        }
+
+        var inputs = div.getElementsByTagName('input');
+        inputs[0].value = result[i].username;
+        inputs[1].value = result[i].province + ' ' + result[i].city + ' ' + result[i].location;
+        inputs[2].value = result[i].blog;
+        inputs[3].value = result[i].email;
+        inputs[4].value = result[i].birthday;
+
+
+        parent.appendChild(div);
+    }
+}
+
+function addConcern(node) {
+
+    var concern_id = node.getElementsByTagName('a')[0].innerHTML.trim();
+
+    $.ajax({
+        url: '/Track/public/AddConcern',
+        type: 'post',
+        async: false,
+        data: {
+            'user_id': USERID,
+            'concern_id': concern_id
+        },
+        success: function () {
+            window.location.reload();
+        },
+        error: function () {
+            alert('关注失败');
+        }
+    });
 
 }

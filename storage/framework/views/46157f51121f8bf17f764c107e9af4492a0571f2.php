@@ -135,12 +135,21 @@
             <input type="text" placeholder="请输入用户昵称搜索">
         </div>
 
-        <div class="search_btn">
+        <div class="search_btn" onclick="search()">
             <i class="fa fa-search"></i>
         </div>
     </div>
 
+    <div id="concerns"></div>
+
+    <div id="searchs" style="display: none;"></div>
+
     <div id="fan_info_copy" class="each_fan" style="display: none;">
+
+        <div class="add_btn">
+            <i class="fa fa-plus">关注</i>
+        </div>
+
         <div class="p_img"></div>
         <div class="p_username">
             <input class="p_text" type="text" value="用户名" readonly="true">
@@ -149,14 +158,14 @@
         <div class="detail_hide">
             <div class="title_lbl">地区</div>
             <div class="p_username">
-                <input class="p_text" style="font-size: 14px;" type="text" value="江苏省 南京市 鼓楼区" readonly>
+                <input class="p_text" style="font-size: 14px;" type="text" placeholder="无" readonly>
             </div>
         </div>
 
         <div class="detail_hide">
             <div class="title_lbl">个人主页</div>
             <div class="p_username">
-                <input class="p_text" style="font-size: 14px;" type="text" value="xxx.xxxxx.xxx" readonly>
+                <input class="p_text" style="font-size: 14px;" type="text" placeholder="无" readonly>
             </div>
         </div>
 
@@ -164,21 +173,21 @@
         <div class="detail_hide" v>
             <div class="title_lbl">邮箱</div>
             <div class="p_username">
-                <input class="p_text" style="font-size: 14px;" type="text" value="794637366@qq.com" readonly>
+                <input class="p_text" style="font-size: 14px;" type="text" placeholder="无" readonly>
             </div>
         </div>
 
         <div class="detail_hide">
             <div class="title_lbl">生日</div>
             <div class="p_username">
-                <input id="birth" class="p_text" style="font-size: 14px;" type="text" value="1996-12-15" readonly
+                <input id="birth" class="p_text" style="font-size: 14px;" type="text" placeholder="无" readonly
                        disabled>
             </div>
         </div>
 
         <div class="title_lbl">最新动态</div>
         <div class="newest_div">
-            #Track#告诉我，我从2016年10月16日 14:40 到 10月17日 10:10, 走了 3067 步，5.8 公里，燃烧 290 大卡。"
+            <div style="text-align: center">(无)</div>
         </div>
     </div>
 

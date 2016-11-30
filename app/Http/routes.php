@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 // 登录注册
-Route::get('Register/{username}/{password}', 'LoginController@register');
+Route::get('Register', 'LoginController@register');
 
 Route::get('CheckRepeat', 'LoginController@checkRepeat');
 
@@ -71,6 +71,8 @@ Route::get('/Personal/{username}/{userId}', function ($username, $userId) {
 
 Route::get('PersonalInfo', 'PersonalController@getUserInfo');
 
+Route::post('UpdateInfo', 'PersonalController@updateUserInfo');
+
 // 人迹
 Route::get('/Social/{username}/{userId}', function ($username, $userId) {
     return view('pages/Social', ['username' => $username, 'userId' => $userId]);
@@ -84,3 +86,13 @@ Route::post('ThumbUp', 'SocialController@thumbUp');
 Route::get('GetThumbs', 'SocialController@getThumbs');
 
 Route::get('AlreadyThumb', 'SocialController@alreadyThumbUp');
+
+Route::post('Search', 'SocialController@searchUsers');
+
+Route::post('AddConcern', 'SocialController@addConcern');
+
+Route::post('GetConcern', 'SocialController@getConcern');
+
+Route::post('GetFans', 'SocialController@getFans');
+
+Route::get('AlreadyConcern', 'SocialController@alreadyConcern');

@@ -45,7 +45,7 @@
 }
 
 .dy_zan:hover {
-    color: #43c138;
+    color: #44d338;
 }
 
 .each_fan {
@@ -59,6 +59,7 @@
     vertical-align: top;
     margin: 10px 25px;
     cursor: pointer;
+    position: relative;
 }
 
 .each_fan:hover {
@@ -173,7 +174,7 @@ input:disabled {
 .cross_h {
     width: 50px;
     height: 4px;
-    background-color:  #cbcbcd;
+    background-color: #cbcbcd;
     position: relative;
     top: 38px;
     left: 15px;
@@ -182,7 +183,7 @@ input:disabled {
 .cross_v {
     width: 4px;
     height: 50px;
-    background-color:  #cbcbcd;
+    background-color: #cbcbcd;
     position: relative;
     top: 12px;
     left: 38px;
@@ -231,4 +232,23 @@ input:disabled {
 
 .search_btn:hover {
     background: rgba(45, 99, 41, 0.8);
+}
+
+.add_btn {
+    width: 45px;
+    height: 20px;
+    color: #3e5e45;
+    font-size: 14px;
+    border: 1px solid #3e5e45;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add_btn:hover {
+    background: rgba(45, 99, 41, 0.8);
+    color: #fff;
 }

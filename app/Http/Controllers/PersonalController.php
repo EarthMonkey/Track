@@ -24,6 +24,23 @@ class PersonalController extends Controller
 
     public function updateUserInfo(Request $request)
     {
+        $userId = $request->input('userId');
+        $username = $request->input('username');
+        $province = $request->input('province');
+        $city = $request->input('city');
+        $location = $request->input('location');
+        $blog = $request->input('blog');
+        $email = $request->input('email');
+        $birthday = $request->input('birthday');
 
+        DB::table('user_info')->where('id', $userId)
+            ->update([
+                'province' => $province,
+                'city' => $city,
+                'location' => $location,
+                'blog' => $blog,
+                'email' => $email,
+                'birthday' => $birthday
+            ]);
     }
 }
